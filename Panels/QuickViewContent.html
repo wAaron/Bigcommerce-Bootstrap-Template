@@ -25,7 +25,7 @@
 </style>
 <div id="site-modal">
 
-	<form method="post" action="%%GLOBAL_CartLink%%" onsubmit="return check_add_to_cart(this, %%GLOBAL_ProductOptionRequired%%) %%GLOBAL_FastCartButtonJs%%"  enctype="multipart/form-data" id="productDetailsAddToCartForm">
+	<form method="post" action="%%GLOBAL_CartLink%%" onsubmit="return check_add_to_cart(this, %%GLOBAL_ProductOptionRequired%%) %%GLOBAL_FastCartButtonJs%%" class="form-horizontal" enctype="multipart/form-data" id="productDetailsAddToCartForm">
 
 		<input type="hidden" name="action" value="add">
 		<input type="hidden" name="product_id" value="%%GLOBAL_ProductId%%">
@@ -39,103 +39,131 @@
 		    </h4>
 		</div>
 		<div class="modal-body">
-			<div class="te">
+			<div class="te row">
 
-		        <div class="thumbnail">
-		            <a href="%%GLOBAL_QuickViewProductURL%%">
-		                <img src="%%GLOBAL_ThumbImageURL%%" alt="%%GLOBAL_QuickViewProductName%%" />
-		            </a>
-		        </div>
+				<div class="row-modal">
 
-				<p class="lead">%%GLOBAL_QuickViewProductDescription%%</p>	
+					<div class="col-md-6">
 
-				<div class="row-modal well cf">
+				        <div class="thumbnail">
+				            <a href="%%GLOBAL_QuickViewProductURL%%">
+				                <img src="%%GLOBAL_ThumbImageURL%%" alt="%%GLOBAL_QuickViewProductName%%" />
+				            </a>
+				        </div>
+				    </div>
+				    <div class="col-md-6">
 
-					<dl class="col-md-6 col-sm-6 col-xs-12 productAttributeRow ProductSKU" style="display: %%GLOBAL_HideSKU%%">
-						<dt class="productAttributeLabel">%%LNG_SKU%%</dt>
-						<dd class="productAttributeValue VariationProductSKU">
-							%%GLOBAL_SKU%%
-						</dd>
-					</dl>
-					
-					<dl class="col-md-6 col-sm-6 col-xs-12 productAttributeRow" style="%%GLOBAL_HideVendorDetails%%">
-						<dt class="productAttributeLabel">%%LNG_Vendor%%</dt>
-						<dd class="productAttributeValue">
-							%%GLOBAL_VendorName%%
-						</dd>
-					</dl>
+						<p class="lead">%%GLOBAL_QuickViewProductDescription%%</p>	
 
-					<dl class="col-md-6 col-sm-6 col-xs-12 productAttributeRow" style="display: %%GLOBAL_HideBrandLink%%">
-						<dt class="productAttributeLabel">%%LNG_Brand%%</dt>
-						<dd class="productAttributeValue">
-							<a href="%%GLOBAL_BrandLink%%">%%GLOBAL_BrandName%%</a>
-						</dd>
-					</dl>
+						<div class="row price-row">
 
-					<dl class="col-md-6 col-sm-6 col-xs-12 productAttributeRow" style="display: %%GLOBAL_HideCondition%%">
-						<dt class="productAttributeLabel">%%LNG_Condition%%</dt>
-						<dd class="productAttributeValue">
-							%%GLOBAL_ProductCondition%%
-						</dd>
-					</dl>
+							<div class="col-md-12">
 
-					<dl class="col-md-6 col-sm-6 col-xs-12 productAttributeRow" style="display: %%GLOBAL_HideWeight%%">
-						<dt class="productAttributeLabel">%%LNG_Weight%%</dt>
-						<dd class="productAttributeValue VariationProductWeight">
-							%%GLOBAL_ProductWeight%%
-						</dd>
-					</dl>
+	                        	<!-- <div class="productAttributeLabel">%%GLOBAL_PriceLabel%%</div> -->
+	                            <strong class="lead product-price" style="%%GLOBAL_HidePrice%%">%%GLOBAL_ProductPrice%%</strong>
+	                            %%GLOBAL_IncludingExcludingTax%%
 
-					<dl class="col-md-6 col-sm-6 col-xs-12 productAttributeRow" style="display: %%GLOBAL_HideAvailability%%">
-						<dt class="productAttributeLabel">%%LNG_Availability%%</dt>
-						<dd class="productAttributeValue">
-							%%GLOBAL_Availability%%
-						</dd>
-					</dl>
+	                            <span class="or">&times;</span>
 
-					<dl class="col-md-6 col-sm-6 col-xs-12 productAttributeRow" style="%%GLOBAL_HideMinQty%%">
-						<dt class="productAttributeLabel">%%LNG_ProductMinQty%%</dt>
-						<dd class="productAttributeValue">
-							%%GLOBAL_MinQty%% %%LNG_units%%
-						</dd>
-					</dl>
+			                    <div class="price-retail" style="display: %%GLOBAL_HideRRP%%">
+			                        %%GLOBAL_RetailPrice%%
+			                        <span class="you-save">%%GLOBAL_YouSave%%</span>
+			                    </div>
 
-					<dl class="col-md-6 col-sm-6 col-xs-12 productAttributeRow" style="%%GLOBAL_HideMaxQty%%">
-						<dt class="productAttributeLabel">%%LNG_ProductMaxQty%%</dt>
-						<dd class="productAttributeValue">
-							%%GLOBAL_MaxQty%% %%LNG_units%%
-						</dd>
-					</dl>
-					
-					<dl class="productAttributeRow InventoryLevel" style="%%GLOBAL_HideCurrentStock%%">
-						<dt class="productAttributeLabel">%%GLOBAL_CurrentStockLabel%%</dt>
-						<dd class="productAttributeValue VariationProductInventory">
-							%%GLOBAL_InventoryList%%
-						</dd>
-					</dl>
+					            <label class="sr-only">%%LNG_Quantity%%</label>
+					            %%GLOBAL_AddToCartQty%%
+		                    </div>
+	                    </div>
 
-					<dl class="col-md-6 col-sm-6 col-xs-12 productAttributeRow" style="%%GLOBAL_HideGiftWrapMessage%%">
-						<dt class="productAttributeLabel">%%LNG_GiftWrapping%%</dt>
-						<dd class="productAttributeValue">
-							%%GLOBAL_GiftWrappingAvailable%%
-						</dd>
-					</dl>
+	                    <div class="row">
+
+							<dl class="col-md-6 col-sm-6 col-xs-12 productAttributeRow ProductSKU" style="display: %%GLOBAL_HideSKU%%">
+								<dt class="productAttributeLabel">%%LNG_SKU%%</dt>
+								<dd class="productAttributeValue VariationProductSKU">
+									%%GLOBAL_SKU%%
+								</dd>
+							</dl>
+							
+							<dl class="col-md-6 col-sm-6 col-xs-12 productAttributeRow" style="%%GLOBAL_HideVendorDetails%%">
+								<dt class="productAttributeLabel">%%LNG_Vendor%%</dt>
+								<dd class="productAttributeValue">
+									%%GLOBAL_VendorName%%
+								</dd>
+							</dl>
+
+							<dl class="col-md-6 col-sm-6 col-xs-12 productAttributeRow" style="display: %%GLOBAL_HideBrandLink%%">
+								<dt class="productAttributeLabel">%%LNG_Brand%%</dt>
+								<dd class="productAttributeValue">
+									<a href="%%GLOBAL_BrandLink%%">%%GLOBAL_BrandName%%</a>
+								</dd>
+							</dl>
+
+							<dl class="col-md-6 col-sm-6 col-xs-12 productAttributeRow" style="display: %%GLOBAL_HideCondition%%">
+								<dt class="productAttributeLabel">%%LNG_Condition%%</dt>
+								<dd class="productAttributeValue">
+									%%GLOBAL_ProductCondition%%
+								</dd>
+							</dl>
+
+							<dl class="col-md-6 col-sm-6 col-xs-12 productAttributeRow" style="display: %%GLOBAL_HideWeight%%">
+								<dt class="productAttributeLabel">%%LNG_Weight%%</dt>
+								<dd class="productAttributeValue VariationProductWeight">
+									%%GLOBAL_ProductWeight%%
+								</dd>
+							</dl>
+
+							<dl class="col-md-6 col-sm-6 col-xs-12 productAttributeRow" style="display: %%GLOBAL_HideAvailability%%">
+								<dt class="productAttributeLabel">%%LNG_Availability%%</dt>
+								<dd class="productAttributeValue">
+									%%GLOBAL_Availability%%
+								</dd>
+							</dl>
+
+							<dl class="col-md-6 col-sm-6 col-xs-12 productAttributeRow" style="%%GLOBAL_HideMinQty%%">
+								<dt class="productAttributeLabel">%%LNG_ProductMinQty%%</dt>
+								<dd class="productAttributeValue">
+									%%GLOBAL_MinQty%% %%LNG_units%%
+								</dd>
+							</dl>
+
+							<dl class="col-md-6 col-sm-6 col-xs-12 productAttributeRow" style="%%GLOBAL_HideMaxQty%%">
+								<dt class="productAttributeLabel">%%LNG_ProductMaxQty%%</dt>
+								<dd class="productAttributeValue">
+									%%GLOBAL_MaxQty%% %%LNG_units%%
+								</dd>
+							</dl>
+							
+							<dl class="productAttributeRow InventoryLevel" style="%%GLOBAL_HideCurrentStock%%">
+								<dt class="productAttributeLabel">%%GLOBAL_CurrentStockLabel%%</dt>
+								<dd class="productAttributeValue VariationProductInventory">
+									%%GLOBAL_InventoryList%%
+								</dd>
+							</dl>
+
+							<dl class="col-md-6 col-sm-6 col-xs-12 productAttributeRow" style="%%GLOBAL_HideGiftWrapMessage%%">
+								<dt class="productAttributeLabel">%%LNG_GiftWrapping%%</dt>
+								<dd class="productAttributeValue">
+									%%GLOBAL_GiftWrappingAvailable%%
+								</dd>
+							</dl>
+						</div>
+					</div>
 				</div>
-
-
 				
 	        </div><!-- END te -->
 	    </div>
 	    <div class="modal-footer cf">
 
 			<div class="row-modal">
-				%%SNIPPET_ProductFieldsList%%
+				<div class="ProductAttributeList">
+					%%SNIPPET_ProductFieldsList%%
+				</div>
 			</div>
 			
 			<div class="row-modal" style="%%GLOBAL_HideProductAttributeList%%">
 				%%GLOBAL_ProductAttributeList%%
 			</div>
-			
+
 			<div class="row-modal">
 				%%SNIPPET_EventDate%%
 			</div>
@@ -148,32 +176,6 @@
 						%%GLOBAL_ShippingPrice%%
 					</dd>
 				</dl>
-
-                <div class="col-md-4 col-sm-4 col-xs-12 ProductPriceWrap">
-
-                    <div class="productAttributeRow RetailPrice" style="display: %%GLOBAL_HideRRP%%">
-                        <span class="productAttributeLabel">%%LNG_RRP%%:</span>
-                        %%GLOBAL_RetailPrice%%
-                        %%GLOBAL_YouSave%%
-                    </div>
-
-                    <div class="productAttributeRow PriceRow" style="%%GLOBAL_HidePrice%%">
-                        <!-- <div class="productAttributeLabel">%%GLOBAL_PriceLabel%%</div> -->
-                        <div class="productAttributeValue">
-                            <strong class="lead btn product-price">%%GLOBAL_ProductPrice%%</strong>
-                            %%GLOBAL_IncludingExcludingTax%%
-                        </div>
-                    </div>
-                </div>
-
-				<div class="col-md-4 col-sm-4 col-xs-12 productAttributeRow" style="display: %%GLOBAL_DisplayAdd%%">
-
-		            <div class="input-group" style="display: %%GLOBAL_DisplayAddQty%%">
-		                
-		                <label class="input-group-addon">%%LNG_QuantityFull%%</label>
-		                %%GLOBAL_AddToCartQty%%
-		            </div>
-				</div>
 				
 				<div class="col-md-6 col-sm-6 col-xs-12 productAttributeRow" style="display: %%GLOBAL_HideBulkDiscountLink%%;">
 					<div class="productAttributeLabel">%%LNG_QuickViewBulkDiscountsLabel%% </div>
@@ -189,23 +191,23 @@
 				</div>
 			</div>
 
-			<div class="row-modal">
+			<div class="row">
 				<div class="col-md-4 col-sm-4 col-xs-12">
-					<a href="#" class="btn btn-default btn-block add-to-wishlist" style="display:%%GLOBAL_HideWishlist%%">
+					<a href="#" class="btn btn-link btn-sm add-to-wishlist" style="display:%%GLOBAL_HideWishlist%%">
 						<i class="glyphicon glyphicon-star"></i>
 						Add to Wishlist
 					</a>
 				</div>
 
-		    	<div class="col-md-4 col-sm-4 col-xs-12">
-					<button class="btn btn-primary btn-block" style="display: %%GLOBAL_DisplayAdd%%;">
+		    	<div class="col-md-4 col-sm-4 col-xs-12 text-center">
+					<button class="btn btn-primary btn-lg" style="display: %%GLOBAL_DisplayAdd%%;">
 						<i class="glyphicon glyphicon-shopping-cart"></i>
 						Add to Cart
 					</button>
 				</div>
 
-				<div class="col-md-4 col-sm-4 col-xs-12 pull-right">
-					<a href="%%GLOBAL_QuickViewProductURL%%" class="btn btn-default btn-block">
+				<div class="col-md-4 col-sm-4 col-xs-12 text-right">
+					<a href="%%GLOBAL_QuickViewProductURL%%" class="btn btn-link btn-sm">
 						View Details
 						<i class="glyphicon glyphicon-arrow-right"></i>
 					</a>

@@ -1,17 +1,17 @@
 <script>
-
+	
     var ThumbURLs                = [],
-        ZoomImageURLs            = [],
-        ProductImageDescriptions = [],
-        ProductThumbWidth        = %%GLOBAL_ProductThumbWidth%%,
-        ProductThumbHeight       =  %%GLOBAL_ProductThumbHeight%%
-        ProductMaxZoomWidth      = %%GLOBAL_ProductMaxZoomWidth%%,
-        ProductMaxZoomHeight     =  %%GLOBAL_ProductMaxZoomHeight%%,
-        ProductTinyWidth         = %%GLOBAL_ProductMaxTinyWidth%%,
-        ProductTinyHeight        =  %%GLOBAL_ProductMaxTinyHeight%%,
-        ShowImageZoomer          = %%GLOBAL_ShowImageZoomer%%,
-        productId                = %%GLOBAL_ProductId%%;
-        
+    	ZoomImageURLs            = [],
+    	ProductImageDescriptions = [],
+    	ProductThumbWidth        = %%GLOBAL_ProductThumbWidth%%,
+    	ProductThumbHeight       =  %%GLOBAL_ProductThumbHeight%%
+    	ProductMaxZoomWidth      = %%GLOBAL_ProductMaxZoomWidth%%,
+    	ProductMaxZoomHeight     =  %%GLOBAL_ProductMaxZoomHeight%%,
+    	ProductTinyWidth         = %%GLOBAL_ProductMaxTinyWidth%%,
+    	ProductTinyHeight        =  %%GLOBAL_ProductMaxTinyHeight%%,
+    	ShowImageZoomer          = %%GLOBAL_ShowImageZoomer%%,
+    	productId                = %%GLOBAL_ProductId%%;
+	
     %%GLOBAL_ProdImageJavascript%%
     %%GLOBAL_ProdImageZoomJavascript%%
 </script>
@@ -20,80 +20,77 @@
 <script src="%%ASSET_js/product.attributes.js%%"></script>
 <script src="%%ASSET_js/productimage.js%%"></script>
 
-<main id="main" class="row">
+<main class="row">
     <!-- Alerts, Messages etc.. -->
     <div class="col-md-12">
-
+		
         %%Discount.FreeShippingEligibility%%
-
+		
         <div class="alert alert-danger alert-sold-out">
             %%SNIPPET_SideAddItemSoldOut%%
-        </div>
-
+		</div>
+		
         %%GLOBAL_ProductDetailFlashMessages%%
-    </div>
+	</div>
     <!-- Product Left Column -->
-    <div class="col-md-5" id="product-left-column">
-
+	<div class="col-md-6" id="product-left-column">
+		
         <div id="product-image-carousel" class="carousel slide" data-ride="carousel" data-indicators="true">
-
+			
             <ul class="carousel-inner" role="listbox" id="product-image-gallery"></ul>
-
+			
             <nav class="text-center">
                 <ul class="pagination" aria-label="Go to Slide...">
                     <li>
                         <a href="#product-image-carousel" role="button" data-slide="prev">
                             <i class="glyphicon glyphicon-arrow-left"></i>
                             <span>Previous</span>
-                        </a>
-                    </li>
+						</a>
+					</li>
                     <li class="image-count">
                         <span><!-- %%LNG_Image%% --><strong class="current-image-index">1</strong> %%LNG_Of%% <strong class="total-images"></strong></span>
-                    </li>
+					</li>
                     <li>
                         <a href="#product-image-carousel" role="button" data-slide="next">
                             <span>Next</span>
                             <i class="glyphicon glyphicon-arrow-right"></i>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-
-        </div>
-
+						</a>
+					</li>
+				</ul>
+			</nav>
+			
+		</div>
+		
         <div class="controls">
             <ul id="carousel-thumbnails" class="product-image-thumbnails">
                 %%SNIPPET_ProductTinyImages%%
-            </ul>
-        </div>
-
+			</ul>
+		</div>
+		
         <a href="%%GLOBAL_ShopPath%%/productimage.php?product_id=%%GLOBAL_ProductId%%" data-toggle="modal" data-target="#product-image-modal" style="%%GLOBAL_HideMorePicturesLink%%" id="product-image-modal-link">%%GLOBAL_SeeMorePictures%%</a>
 
-    </div>
+        %%Panel.SideProductAddToWishList%%
+	</div>
     
     <!-- Product Right Column -->
-    <div class="col-md-7" id="product-right-column">
+    <div class="col-md-6" id="product-right-column">
         
-        <h1 class="title">%%GLOBAL_ProductName%%</h1>
-        
+        <h1 class="page-header">%%GLOBAL_ProductName%%</h1>
+		
         %%GLOBAL_FacebookLikeButtonAbove%% 
 
-        %%Panel.ProductDescription%%
-        
-        %%Panel.ProductWarranty%%
-        
-        <div class="col-md-12 well" id="product-attributes">
-            
-            <dl class="col-md-6 col-sm-6 col-xs-12" style="display: %%GLOBAL_HideSKU%%" id="product-attribute-sku">
-                <dt>%%LNG_SKU%%</dt>
-                <dd><span class="VariationProductSKU">%%GLOBAL_SKU%%</span></dd>
-            </dl>
+        <div class="col-md-12" id="product-attributes">
             
             <dl class="col-md-6 col-sm-6 col-xs-12" style="%%GLOBAL_HideVendorDetails%%" id="product-attribute-vendor">
                 <dt>%%LNG_Vendor%%</dt>
                 <dd>%%GLOBAL_VendorName%%</dd>
             </dl>
             
+             <dl class="col-md-6 col-sm-6 col-xs-12" style="display: %%GLOBAL_HideSKU%%" id="product-attribute-sku">
+                <dt>SKU</dt>
+                <dd><span class="VariationProductSKU">%%GLOBAL_SKU%%</span></dd>
+            </dl>
+
             <dl class="col-md-6 col-sm-6 col-xs-12" style="display: %%GLOBAL_HideBrandLink%%" id="product-attribute-brand">
                 <dt>%%LNG_Brand%%</dt>
                 <dd><a href="%%GLOBAL_BrandLink%%">%%GLOBAL_BrandName%%</a></dd>
@@ -112,11 +109,6 @@
             <dl class="col-md-6 col-sm-6 col-xs-12" style="display: %%GLOBAL_HideAvailability%%" id="product-attribute-availability">
                 <dt>%%LNG_Availability%%</dt>
                 <dd>%%GLOBAL_Availability%%</dd>
-            </dl>
-            
-            <dl class="col-md-6 col-sm-6 col-xs-12" style="display: %%GLOBAL_HideShipping%%" id="product-attribute-shipping">
-                <dt>%%LNG_Shipping%%</dt>
-                <dd>%%GLOBAL_ShippingPrice%%</dd>
             </dl>
             
             <dl class="col-md-6 col-sm-6 col-xs-12" style="%%GLOBAL_HideMinQty%%" id="product-attribute-minimum-quantity">
@@ -138,21 +130,81 @@
                 <dt>%%LNG_GiftWrapping%%</dt>
                 <dd>%%GLOBAL_GiftWrappingAvailable%%</dd>
             </dl>
-
-            <dl class="col-md-6 col-sm-6 col-xs-12" style="%%GLOBAL_HideWeight%%" id="product-attribute-weight">
+            
+            <!--             <dl class="col-md-6 col-sm-6 col-xs-12" style="%%GLOBAL_HideWeight%%" id="product-attribute-weight">
                 <dt>%%LNG_Weight%%</dt>
                 <dd>%%GLOBAL_ProductWeight%%</dd>
-            </dl>
+            </dl> -->
         </div>
-        
+
+        %%Panel.ProductDescription%%
+
+
+
+            <div class="product-price-container text-center" style="%%GLOBAL_HidePrice%%">
+    
+                <strong class="lead product-price">%%GLOBAL_ProductPrice%%</strong>
+                
+                %%GLOBAL_IncludingExcludingTax%%
+                
+                <dl class="RetailPrice" style="display: %%GLOBAL_HideRRP%%">
+                    <dt>%%LNG_RRP%%:</dt>
+                    <dl>%%GLOBAL_RetailPrice%% %%GLOBAL_YouSave%%</dl>
+                </dl>
+            </div>
+
+            <dl style="display: %%GLOBAL_HideShipping%%" id="product-attribute-shipping">
+                <dt>%%LNG_Shipping%%</dt>
+                <dd>%%GLOBAL_ShippingPrice%%</dd>
+            </dl> 
+		
         %%SNIPPET_ProductAddToCart%%
         
-        <div class="row share-buttons">
+        %%SNIPPET_ProductExpectedReleaseDate%%
+        
+	</div>
+	
+    <div class="col-md-12">
 
+        <div class="panel-group" id="product-accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#product-accordion" href="#collapseTwo">
+                            <i class="glyphicon glyphicon-plus pull-right"></i>
+                            Specs
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        %%Panel.ProductWarranty%%
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#product-accordion" href="#collapseFour">
+                            <i class="glyphicon glyphicon-plus pull-right"></i>
+                            Reviews
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseFour" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        %%Panel.ProductReviews%%
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row share-buttons">
+            
             <div class="col-md-12 col-sm-12 col-xs-12 text-center">
                 
                 <h2><span>Be nice and share</span></h2>
-
+                
                 <div class="social-buttons cf">
                     
                     <span class='st_facebook_large' displayText='Facebook'></span>
@@ -162,11 +214,8 @@
                 </div>
             </div>
         </div>
-        
-        %%SNIPPET_ProductExpectedReleaseDate%%
-        
     </div>
-    
+
     %%SNIPPET_ProductAddToCartBelow%%
     
 </main>
@@ -177,6 +226,6 @@
 <div class="modal fade" id="product-image-modal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content"></div>
-    </div>
+	</div>
 </div>
 

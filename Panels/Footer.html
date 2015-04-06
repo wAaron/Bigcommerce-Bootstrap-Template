@@ -38,8 +38,8 @@
             <div class="col-md-3">
 
                 <h4>Categories</h4>
-                
-                %%Panel.FooterCategoryList%%
+
+                %%Panel.SideCategoryList%%
             </div>
 
             <div class="col-md-3">
@@ -47,8 +47,15 @@
                 <h4>Keep In Touch</h4>
 
                 %%Panel.SocialLinks%%
-                
-                <!--<script src="//smarticon.geotrust.com/si.js"></script>-->
+
+                <p><strong>800-123-4567</strong> (MON - FRI 9AM - 5PM CST)</p>
+                <p><a href="mailto:info@allureboutique.com">info@allureboutique.com</a></p>
+
+                <!-- webbot  bot="HTMLMarkup" startspan -->
+                <!-- GeoTrust QuickSSL [tm] Smart  Icon tag. Do not edit. -->
+                <script src="//smarticon.geotrust.com/si.js"></script>
+                <!-- end  GeoTrust Smart Icon tag -->
+                <!-- webbot  bot="HTMLMarkup" endspan -->
 
                 <i class="sprite badge-authorizenet"></i>
             </div>
@@ -57,9 +64,9 @@
             <div class="col-md-7 col-xs-12">
                 
                 <p id="copyright">
-                    &copy; Copyright %%GLOBAL_Year%% &mdash; %%GLOBAL_StoreName%% &mdash; 
+                    &copy; Copyright %%GLOBAL_Year%% &mdash; Allure Boutique &mdash; 
                     All Rights Reserved &mdash; 
-                    %%SNIPPET_SitemapLink%% | 
+                    <a href="/sitemap.php">Sitemap</a> | 
                     Design by <a href="http://www.redheadlabs.com/" class="link-redhead">Redhead Labs</a>
                 </p>
             </div>
@@ -84,7 +91,7 @@
 
 <script id="template-quicksearch-product" type="text/template">
 <div>
-    <li class="list-group-item">
+    <li class="list-group-item search-result">
         <div class="media">
             <div class="media-left">
                 <a href="{{product.url}}">

@@ -329,18 +329,6 @@ function check_product_review_form() {
 	return true;
 }
 
-function check_small_search_form() {
-	var search_query = g("search_query");
-	
-	if(search_query.value == "") {
-		alert(lang.EmptySmallSearch);
-		search_query.focus();
-		return false;
-	}
-	
-	return true;
-}
-
 function setCurrency(currencyId)
 {
 	var gotoURL = location.href;

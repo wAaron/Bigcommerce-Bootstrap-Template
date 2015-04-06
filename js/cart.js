@@ -117,7 +117,7 @@ var Cart = {
 			return returnVal;
 		}
 
-		$('#cartForm').submit();
+		$('#form-cart').submit();
 	},
 
 	RemoveItem: function(itemId)
@@ -129,7 +129,7 @@ var Cart = {
 
 	UpdateQuantity: function()
 	{
-		$('#cartForm').submit();
+		$('#form-cart').submit();
 	},
 
 	ValidateQuantityForm: function(form)
@@ -279,3 +279,11 @@ var Cart = {
 	}
 
 };
+
+$().ready( function(){
+
+	$(document).on('click', '.btn-update-cart', function(){
+
+		Cart.UpdateQuantity();
+	});
+});

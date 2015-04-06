@@ -1,7 +1,16 @@
 <!--Template: SearchResultsGrid-->
-<div class="row" id="search-toolbar">
+<div class="clearfix" id="search-toolbar">
 
-	<div class="col-md-6 col-sm-6 col-xs-12" id="search-paging-top" style="display: %%GLOBAL_HideSectionPaging%%">
+	<div class="col-md-6 col-sm-6 col-xs-12" id="search-sort" style="display: %%GLOBAL_HideSectionSorting%%">
+		<div class="form-inline">
+			<strong class="control-label">%%LNG_SortBy%%</strong>
+			<select id="SearchSorting%%GLOBAL_SectionType%%" name="SearchSorting%%GLOBAL_SectionType%%" class="SearchSortingList form-control">
+				%%GLOBAL_SectionSortingOptions%%
+			</select>
+		</div>
+	</div>
+
+	<div class="col-md-6 col-sm-6 col-xs-12 text-right" id="search-paging-top" style="display: %%GLOBAL_HideSectionPaging%%">
 
 		<ul class="pagination">
 			<li>%%GLOBAL_SectionPagingPrevious%%</li>
@@ -9,15 +18,6 @@
 			%%GLOBAL_SectionPaging%%
 			<li>%%GLOBAL_SectionPagingNext%%</li>
 		</ul>
-	</div>
-
-	<div class="col-md-6 col-sm-6 col-xs-12 pull-right" id="search-sort" style="display: %%GLOBAL_HideSectionSorting%%">
-		<div class="form-inline">
-			<strong class="control-label">%%LNG_SortBy%%</strong>
-			<select id="SearchSorting%%GLOBAL_SectionType%%" name="SearchSorting%%GLOBAL_SectionType%%" class="SearchSortingList form-control">
-				%%GLOBAL_SectionSortingOptions%%
-			</select>
-		</div>
 	</div>
 </div>
 
