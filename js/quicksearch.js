@@ -1,8 +1,3 @@
-function clearResults(){
-
-    $("#search_results").html('');
-}
-
 function getsearchXML( search_query ){
 
     var response;
@@ -111,20 +106,39 @@ function printResults(){
 
     $.each(results, function(index, value) {
 
-        var current_product_price = (value.price > 0)?'$' + value.price:'',
-            itemTemplate = $('#template-quicksearch-product').html()
-            .replace(new RegExp('{{product.url}}', 'g'), value.title)
-            .replace(new RegExp('{{product.name}}', 'g'), value.name)
-            .replace(new RegExp('{{product.image}}', 'g'), value.image)
-            .replace(new RegExp('{{product.price}}', 'g'), current_product_price);
+        console.log(index);
 
-        $('#search_results').append( $(itemTemplate).html() );
+        if(index < 5){
+
+            var current_product_price = (value.price > 0)?'$' + value.price:'',
+                itemTemplate = $('#template-quicksearch-product').html()
+                .replace(new RegExp('{{product.url}}', 'g'), value.title)
+                .replace(new RegExp('{{product.name}}', 'g'), value.name)
+                .replace(new RegExp('{{product.image}}', 'g'), value.image)
+                .replace(new RegExp('{{product.price}}', 'g'), current_product_price);
+
+            $('#search_results').append( $(itemTemplate).html() );
+        }
     });
+
+    $('#search_results').append('<li class="list-group-item text-right"><a href="/search.php?search_query=' + encodeURIComponent( $("#search_query").val().toLowerCase() )  + '" class="btn btn-link">View All Results &rsaquo;</a></li>');
+}
+
+function clearResults(){
+
+    $("#search_results li").remove();
 }
 
 $(document).mouseup(function (e){
 
     var container = $("#search_results");
+
+    console.log(e.target);
+
+    if( $(e.target).parents('btn-default').length || $(e.target).hasClass('icon-search')){
+
+        $('#form-search').submit();
+    }
 
     if (!container.is(e.target) && container.has(e.target).length === 0){
 
@@ -136,8 +150,15 @@ $(document).ready(function() {
 
     $("#search_query").keyup(function() {
 
-        var search_query = encodeURIComponent( $(this).val().toLowerCase() );
+        var keycode = (event.keyCode ? event.keyCode : event.which),
+            search_query = encodeURIComponent( $(this).val().toLowerCase() );
 
-        doSearch( search_query );
+        if(keycode != '13'){
+
+            doSearch( search_query );
+        }else{
+
+            $('#form-search').submit();
+        }
     });
 });

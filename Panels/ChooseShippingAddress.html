@@ -1,21 +1,35 @@
-<div class="Block Moveable Panel" id="ChooseShippingAddress">
-	<div class="header">
-		<h2>%%GLOBAL_CheckoutShippingTitle%%</h2>
+<div class="row" id="ChooseShippingAddress">
+
+	<div class="col-md-12">
+
+		<h2 class="page-header"></h2>
+
+		<div class="page-header">
+		  <div class="btn-toolbar pull-right">
+		    <div class="btn-group">
+		      <a href="%%GLOBAL_ShopPathSSL%%/account.php?action=add_shipping_address&amp;address_type=&amp;from=account.php%3Faction%3Daddress_book" class="btn btn-primary">Add Address</a>
+		    </div>
+		  </div>
+		  <h2>%%GLOBAL_CheckoutShippingTitle%%</h2>
+		</div>
+
 		%%Discount.FreeShippingEligibility%%
-		<a href="%%GLOBAL_ShopPathSSL%%/account.php?action=add_shipping_address&amp;address_type=&amp;from=account.php%3Faction%3Daddress_book" class="btn btn-primary pull-right">Add Address</a>
+		
 	</div>
-	<div class="BlockContent">
+	<div class="col-md-12">
+
 		<div class="TabContainer">
-			<ul class="TabNav" style="%%GLOBAL_HideShippingTabs%%">
-				<li id="AddressSingle" class="%%GLOBAL_ActiveTabSingle%%"><a href="%%GLOBAL_ShopPathSSL%%/checkout.php?action=choose_shipping_address&amp;type=single">%%LNG_ShipAllItemsToOneAddress%%</a></li>
-				<li id="AddressMultiple" class="%%GLOBAL_ActiveTabMultiple%%"><a href="%%GLOBAL_ShopPathSSL%%/checkout.php?action=choose_shipping_address&amp;type=multiple">%%LNG_ShipAllItemsToDifferentAddresses%%</a></li>
+
+			<ul class="nav nav-tabs" style="%%GLOBAL_HideShippingTabs%%">
+				<li id="AddressSingle" class="%%GLOBAL_ActiveTabSingle%%" role="presentation"><a href="%%GLOBAL_ShopPathSSL%%/checkout.php?action=choose_shipping_address&amp;type=single">%%LNG_ShipAllItemsToOneAddress%%</a></li>
+				<li id="AddressMultiple" class="%%GLOBAL_ActiveTabMultiple%%" role="presentation"><a href="%%GLOBAL_ShopPathSSL%%/checkout.php?action=choose_shipping_address&amp;type=multiple">%%LNG_ShipAllItemsToDifferentAddresses%%</a></li>
 			</ul>
 
 			<div class="TabContent" id="TabContentAddressSingle" style="%%GLOBAL_HideTabSingle%%">
 				<p class="alert alert-info">
 	    			    %%GLOBAL_CheckoutShippingIntro%%
 		    		</p>
-				<div class="PL20">
+				<div>
 					<ul class="ShippingAddressList">
 						%%SNIPPET_ShippingAddressList%%
 					</ul>
@@ -23,10 +37,10 @@
 			</div>
 
 			<div class="TabContent" id="TabContentAddressMultiple" style="%%GLOBAL_HideTabMultiple%%">
-				<p class="alert alert-info">
-					%%GLOBAL_CheckoutMultiShippingIntro%%
-				</p>
-				<form method="post" action="%%GLOBAL_ShopPathSSL%%/checkout.php?action=save_multiple_shipping_addresses" id="multiAddressForm">
+
+				<p class="alert alert-info">%%GLOBAL_CheckoutMultiShippingIntro%%</p>
+
+				<form method="post" action="%%GLOBAL_ShopPathSSL%%/checkout.php?action=save_multiple_shipping_addresses" class="form" id="multiAddressForm">
 					<table class="General Stylize CartContents" cellspacing="0" cellpadding="0" border="0">
 						<thead>
 							<tr>
@@ -39,8 +53,9 @@
 						</tbody>
 					</table>
 
-					<input type="submit" class="btn btn-primary pull-right" value="%%LNG_ShipToTheseAddresses%%" />
+					<input type="submit" class="btn btn-primary" value="%%LNG_ShipToTheseAddresses%%">
 				</form>
+
 			</div>
 		</div>
 	</div>

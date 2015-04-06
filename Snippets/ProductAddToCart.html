@@ -7,6 +7,8 @@
     <input type="hidden" name="variation_id" class="CartVariationId" value="" />
     <input type="hidden" name="currency_id" value="" /> 
 
+    <h3>The Options <small class="label label-xs">* Denotes Required Field</small></h3>
+
     <div class="row ProductAddToCart">
 
         %%SNIPPET_ProductFieldsList%%
@@ -15,31 +17,47 @@
             %%SNIPPET_VariationList%%
         </div>
 
-        <div class="col-md-12 col-sm-12 col-xs-12 productAttributeList" style="%%GLOBAL_HideProductAttributeList%%">
+        <div class="productAttributeList" style="%%GLOBAL_HideProductAttributeList%%">
             %%GLOBAL_ProductAttributeList%%
         </div>
 
-        %%SNIPPET_EventDate%%
+        
     </div>
+
+    %%SNIPPET_EventDate%%
+
+    %%SNIPPET_ProductExpectedReleaseDate%%
 
     <div class="row" id="add-to-cart-box">
 
-        <div class="col-md-6 col-sm-3 col-xs-12">
+<!--         <div class="col-md-4 col-sm-3 col-xs-12">
+
+            <dl style="display: %%GLOBAL_HideShipping%%" id="product-attribute-shipping">
+                <dt>%%LNG_Shipping%%</dt>
+                <dd>%%GLOBAL_ShippingPrice%%</dd>
+            </dl>
+        </div> -->
+
+        <div class="col-md-4 col-sm-12 col-xs-12">
 
             <div class="product-price-container text-center" style="%%GLOBAL_HidePrice%%">
-
-                <strong class="lead btn-lg product-price">%%GLOBAL_ProductPrice%%</strong>
-
+    
+                <strong class="lead product-price VariationProductPrice">%%GLOBAL_ProductPrice%%</strong>
+                
                 %%GLOBAL_IncludingExcludingTax%%
+                
+                <dl class="RetailPrice" style="display: %%GLOBAL_HideRRP%%">
+                    <dt>%%LNG_RRP%%:</dt>
+                    <dd>%%GLOBAL_RetailPrice%% %%GLOBAL_YouSave%%</dd>
+                </dl>
             </div>
-            
-            <dl class="RetailPrice" style="display: %%GLOBAL_HideRRP%%">
-                <dt>%%LNG_RRP%%:</dt>
-                <dl>%%GLOBAL_RetailPrice%% %%GLOBAL_YouSave%%</dl>
-            </dl>
-        </div>
 
-        <div class="col-md-6 col-sm-4 col-xs-12">
+            <a href="#bulk-discount-rates" data-toggle="collapse" class="btn-buy-bulk" id="bulk-discount-link" style="display: %%GLOBAL_HideBulkDiscountLink%%;">
+                &raquo; Buy More and Save
+            </a>
+        </div>
+        
+        <div class="col-md-4 col-sm-6 col-xs-12">
 
             <div class="input-group input-group-lg" style="display: %%GLOBAL_DisplayAddQty%%;">
                 
@@ -48,29 +66,34 @@
             </div>
         </div>
 
-        <div class="col-md-6 col-sm-4 col-xs-12 action-buttons">
+        <div class="col-md-4 col-sm-6 col-xs-12 action-buttons">
 
-            <button class="btn btn-primary btn-block btn-lg AddCartButton" style="display: %%GLOBAL_DisplayAdd%%;">
-                <i class="glyphicon glyphicon-shopping-cart"></i>
-                Add to cart
+            <button class="btn btn-primary btn-lg btn-block btn-add-to-cart" style="display: %%GLOBAL_DisplayAdd%%;">
+                <i class="icon-bag"></i>
+                Add to Bag
             </button>
-            
-            <a href="#" class="btn btn-primary" id="BulkDiscountLink" style="display: %%GLOBAL_HideBulkDiscountLink%%;" onclick="$.iModal({data: $('#ProductDetailsBulkDiscountThickBox').html(), width: 600}); return false;">
-                %%LNG_BulkDiscountLink%%
-            </a>
         </div>
 
-        <div class="col-md-6 col-sm-4 col-xs-12">
+        <div class="col-md-12 collapse bulk-discount-rates" id="bulk-discount-rates">
 
-            <button class="btn btn-default btn-block btn-lg WishListButton" alt="%%LNG_AddToWishList%%" style="display:%%GLOBAL_HideWishlist%%">
-                <i class="glyphicon glyphicon-heart"></i>
-                Add to wishlist
-            </button>
+            <div class="well text-center">
+                <ul>
+                    %%GLOBAL_BulkDiscountThickBoxRates%%
+                </ul>
+            </div>
         </div>
 
     </div>
+
 </form>
 
+<div class="row">
+
+    <div class="col-md-4 col-md-offset-8 text-center">
+        %%Panel.SideProductAddToWishList%%
+    </div>
+</div>
+    
 %%GLOBAL_ProductBulkDiscountThickBox%%
 
 <script>

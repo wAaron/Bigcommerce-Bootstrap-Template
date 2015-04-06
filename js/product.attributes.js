@@ -38,8 +38,6 @@
 		};
 	}
 
-
-
 	$(function(){
 
 		// mark the add to cart form as being handled by jquery.validate
@@ -95,12 +93,10 @@
             $this.productOptionViewSelectOutOfStock(options);
 
             // hide/show the add to cart button based on price and stock
-			$this.find('.AddCartButton')
-				.closest('.DetailRow')
-					.toggle(showAddCartButton);
+			$this.find('#add-to-cart-box').toggle(showAddCartButton);
 
             // hide/show the add to cart button on QuickView
-            $this.find('.addToCart input').toggle(showAddCartButton)
+            $this.find('#add-to-cart-box input').toggle(showAddCartButton)
                 .next().toggle(showAddCartButton);
 
 
@@ -119,7 +115,7 @@
 
 			// hide/show stock level
 			$this.find('.VariationProductInventory')
-				.closest('.DetailRow')
+				.closest('dl')
 					.toggle((options.stockMessage || options.stock) !== undefined)
 					.end()
 				.text(options.stockMessage || options.stock);
@@ -127,17 +123,18 @@
 			// hide/show weight
 			$this.find('.VariationProductWeight')
 				.text(options.weight === undefined ? '' : options.weight)
-				.closest('.DetailRow')
+				.closest('dl')
 					.toggle(options.weight !== undefined);
 
 			// hide/show sku
 			$this.find('.VariationProductSKU')
 				.text(options.sku === undefined ? '' : options.sku)
-				.closest('.DetailRow')
+				.closest('dl')
 					.toggle(options.sku !== undefined);
 
 			// hide/show price - slightly more complex code due to control panel sharing
 			$this.find('.VariationProductPrice').each(function(){
+
 				var $this = $(this);
 
 				if ($this.is('input')) {
@@ -148,13 +145,12 @@
 
 				// otherwise use regular hide/show formatted behaviour
 				$this.html(options.price === undefined ? '' : options.price)
-					.closest('.DetailRow')
-						.toggle(options.price !== undefined);
+					.toggle(options.price !== undefined);
 			});
 
 			// price label
 			if (options.priceLabel !== undefined) {
-				$this.find('.PriceRow .Label').text(options.priceLabel);
+				//$this.find('.product-price-container strong').text(options.priceLabel);
 			}
 
 			// hide/show savings
@@ -164,7 +160,7 @@
 			$this.find('.YouSave, .RetailPrice')
 				.toggle(options.saveAmount !== undefined);
 
-			$this.find('.RetailPrice .Value')
+			$this.find('.RetailPrice dd')
 				.html(options.saveAmount === undefined || options.rrp === undefined ? '' : options.rrp);
 
 		});

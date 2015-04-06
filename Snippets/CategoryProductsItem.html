@@ -9,15 +9,22 @@
 
                     <h5><a href="%%GLOBAL_ProductLink%%">%%GLOBAL_ProductName%%</a></h5>
                 </div>
-                <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="col-md-6 col-sm-6 col-xs-6">
 
                     <h5 class="price-text-color">%%GLOBAL_ProductPrice%%</h5>
                 </div>
-                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+
+                <div class="col-md-6 col-sm-6 col-xs-6 ProductCompareButton text-right" style="display:%%GLOBAL_HideCompareItems%%">
+
+                    <label for="compare_%%GLOBAL_ProductId%%">%%LNG_Compare%%</label>
+                    <input type="checkbox" class="CheckBox" name="compare_product_ids" id="compare_%%GLOBAL_ProductId%%" value="%%GLOBAL_ProductId%%" onclick="product_comparison_box_changed(this.checked)"> 
+                </div>
+
+                <div class="col-md-6 col-sm-6 col-xs-12">
 
                     <a href="%%GLOBAL_ProductLink%%" class="btn btn-default btn-block hidden-sm">Learn More</a>
                 </div>
-                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                <div class="col-md-6 col-sm-6 col-xs-12">
 
                     <a href="%%GLOBAL_ProductURL%%" class="btn btn-success btn-block btn-add-to-cart">%%GLOBAL_ProductAddText%%</a>
                 </div>

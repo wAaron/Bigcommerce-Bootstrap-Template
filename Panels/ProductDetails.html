@@ -1,17 +1,17 @@
 <script>
-
-    var ThumbURLs                = [],
-        ZoomImageURLs            = [],
-        ProductImageDescriptions = [],
-        ProductThumbWidth        = %%GLOBAL_ProductThumbWidth%%,
-        ProductThumbHeight       =  %%GLOBAL_ProductThumbHeight%%
-        ProductMaxZoomWidth      = %%GLOBAL_ProductMaxZoomWidth%%,
-        ProductMaxZoomHeight     =  %%GLOBAL_ProductMaxZoomHeight%%,
-        ProductTinyWidth         = %%GLOBAL_ProductMaxTinyWidth%%,
-        ProductTinyHeight        =  %%GLOBAL_ProductMaxTinyHeight%%,
-        ShowImageZoomer          = %%GLOBAL_ShowImageZoomer%%,
-        productId                = %%GLOBAL_ProductId%%;
-        
+    
+    var ThumbURLs            = [],
+    ZoomImageURLs            = [],
+    ProductImageDescriptions = [],
+    ProductThumbWidth        = %%GLOBAL_ProductThumbWidth%%,
+    ProductThumbHeight       =  %%GLOBAL_ProductThumbHeight%%
+    ProductMaxZoomWidth      = %%GLOBAL_ProductMaxZoomWidth%%,
+    ProductMaxZoomHeight     =  %%GLOBAL_ProductMaxZoomHeight%%,
+    ProductTinyWidth         = %%GLOBAL_ProductMaxTinyWidth%%,
+    ProductTinyHeight        =  %%GLOBAL_ProductMaxTinyHeight%%,
+    ShowImageZoomer          = %%GLOBAL_ShowImageZoomer%%,
+    productId                = %%GLOBAL_ProductId%%;
+    
     %%GLOBAL_ProdImageJavascript%%
     %%GLOBAL_ProdImageZoomJavascript%%
 </script>
@@ -23,22 +23,26 @@
 <main id="main" class="row">
     <!-- Alerts, Messages etc.. -->
     <div class="col-md-12">
-
+        
         %%Discount.FreeShippingEligibility%%
-
+        
         <div class="alert alert-danger alert-sold-out">
             %%SNIPPET_SideAddItemSoldOut%%
         </div>
-
+        
         %%GLOBAL_ProductDetailFlashMessages%%
+    </div>
+    <div class="col-md-12">
+
+        <h1 class="page-header">%%GLOBAL_ProductName%%</h1>
     </div>
     <!-- Product Left Column -->
     <div class="col-md-5" id="product-left-column">
-
+        
         <div id="product-image-carousel" class="carousel slide" data-ride="carousel" data-indicators="true">
-
+            
             <ul class="carousel-inner" role="listbox" id="product-image-gallery"></ul>
-
+            
             <nav class="text-center">
                 <ul class="pagination" aria-label="Go to Slide...">
                     <li>
@@ -58,101 +62,136 @@
                     </li>
                 </ul>
             </nav>
-
+            
         </div>
-
+        
         <div class="controls">
             <ul id="carousel-thumbnails" class="product-image-thumbnails">
                 %%SNIPPET_ProductTinyImages%%
             </ul>
         </div>
-
+        
         <a href="%%GLOBAL_ShopPath%%/productimage.php?product_id=%%GLOBAL_ProductId%%" data-toggle="modal" data-target="#product-image-modal" style="%%GLOBAL_HideMorePicturesLink%%" id="product-image-modal-link">%%GLOBAL_SeeMorePictures%%</a>
 
+        %%Panel.SideProductRelated%%
+        
     </div>
     
     <!-- Product Right Column -->
     <div class="col-md-7" id="product-right-column">
         
-        <h1 class="title">%%GLOBAL_ProductName%%</h1>
-        
         %%GLOBAL_FacebookLikeButtonAbove%% 
+        
+        <div class="row" id="product-attributes">
+            
+            <div id="addthis-product-top">
+                
+                %%GLOBAL_AddThisLink%%
+                %%GLOBAL_PinterestButton%%
+            </div>
 
-        %%Panel.ProductDescription%%
-        
-        %%Panel.ProductWarranty%%
-        
-        <div class="col-md-12 well" id="product-attributes">
-            
-            <dl class="col-md-6 col-sm-6 col-xs-12" style="display: %%GLOBAL_HideSKU%%" id="product-attribute-sku">
-                <dt>%%LNG_SKU%%</dt>
-                <dd><span class="VariationProductSKU">%%GLOBAL_SKU%%</span></dd>
+            <dl class="" id="product-attribute-rating">
+                <!--dt style="display: %%GLOBAL_HideRating%%">%%LNG_Rating%%</dt-->
+                <dd style="font-size:10pt;vertical-align: middle; color:#ff6e6e;" class="product-rating" data-rating="%%GLOBAL_Rating%%"><a style="font-size:9pt;" href="#Reviews">&raquo; Reviews</a> | 
+               </dd>
             </dl>
-            
-            <dl class="col-md-6 col-sm-6 col-xs-12" style="%%GLOBAL_HideVendorDetails%%" id="product-attribute-vendor">
+
+            <dl class="" style="%%GLOBAL_HideMinQty%%" id="product-attribute-minimum-quantity">
+                <dt>Min. of:</dt>
+                <dd>%%GLOBAL_MinQty%%</dd>
+            </dl>
+
+            <dl class="" style="display: %%GLOBAL_HideSKU%%" id="product-attribute-sku">
+                <dt>#<span class="VariationProductSKU">%%GLOBAL_SKU%%</span></dt>
+            </dl>
+
+
+           
+            <dl class="" style="%%GLOBAL_HideVendorDetails%%" id="product-attribute-vendor">
                 <dt>%%LNG_Vendor%%</dt>
                 <dd>%%GLOBAL_VendorName%%</dd>
             </dl>
-            
-            <dl class="col-md-6 col-sm-6 col-xs-12" style="display: %%GLOBAL_HideBrandLink%%" id="product-attribute-brand">
+
+            <dl style="display: %%GLOBAL_HideBrandLink%%" id="product-attribute-brand">
                 <dt>%%LNG_Brand%%</dt>
                 <dd><a href="%%GLOBAL_BrandLink%%">%%GLOBAL_BrandName%%</a></dd>
             </dl>
             
-            <dl class="col-md-6 col-sm-6 col-xs-12" style="display: %%GLOBAL_HideCondition%%" id="product-attribute-condition">
+            <dl class="" style="display: %%GLOBAL_HideCondition%%" id="product-attribute-condition">
                 <dt>%%LNG_Condition%%</dt>
                 <dd>%%GLOBAL_ProductCondition%%</dd>
             </dl>
             
-            <dl class="col-md-6 col-sm-6 col-xs-12" style="display: %%GLOBAL_HideRating%%" id="product-attribute-rating">
-                <dt>%%LNG_Rating%%</dt>
-                <dd class="product-rating" data-rating="%%GLOBAL_Rating%%"><img src="%%GLOBAL_IMG_PATH%%/IcoRating%%GLOBAL_Rating%%.png" alt="" /></dd>
-            </dl>
-            
-            <dl class="col-md-6 col-sm-6 col-xs-12" style="display: %%GLOBAL_HideAvailability%%" id="product-attribute-availability">
+            <dl class="" style="display: %%GLOBAL_HideAvailability%%" id="product-attribute-availability">
                 <dt>%%LNG_Availability%%</dt>
                 <dd>%%GLOBAL_Availability%%</dd>
             </dl>
             
-            <dl class="col-md-6 col-sm-6 col-xs-12" style="display: %%GLOBAL_HideShipping%%" id="product-attribute-shipping">
-                <dt>%%LNG_Shipping%%</dt>
-                <dd>%%GLOBAL_ShippingPrice%%</dd>
-            </dl>
-            
-            <dl class="col-md-6 col-sm-6 col-xs-12" style="%%GLOBAL_HideMinQty%%" id="product-attribute-minimum-quantity">
-                <dt>%%LNG_ProductMinQty%%</dt>
-                <dd>%%GLOBAL_MinQty%% %%LNG_units%%</dd>
-            </dl>
-            
-            <dl class="col-md-6 col-sm-6 col-xs-12" style="%%GLOBAL_HideMaxQty%%" id="product-attribute-max-quantity">
+            <dl class="" style="%%GLOBAL_HideMaxQty%%" id="product-attribute-max-quantity">
                 <dt>%%LNG_ProductMaxQty%%</dt>
                 <dd>%%GLOBAL_MaxQty%% %%LNG_units%%</dd>
             </dl>
             
-            <dl class="col-md-6 col-sm-6 col-xs-12" style="%%GLOBAL_HideCurrentStock%%" id="product-attribute-inventory">
+            <dl class="" style="%%GLOBAL_HideCurrentStock%%" id="product-attribute-inventory">
                 <dt>%%GLOBAL_CurrentStockLabel%%</dt>
-                <dd>%%GLOBAL_InventoryList%%</dd>
+                <dd><span class="VariationProductInventory">%%GLOBAL_InventoryList%%</span></dd>
             </dl>
             
-            <dl class="col-md-6 col-sm-6 col-xs-12" style="%%GLOBAL_HideGiftWrapMessage%%" id="product-attribute-gift-wrap-message">
+            <dl class="" style="%%GLOBAL_HideGiftWrapMessage%%" id="product-attribute-gift-wrap-message">
                 <dt>%%LNG_GiftWrapping%%</dt>
                 <dd>%%GLOBAL_GiftWrappingAvailable%%</dd>
             </dl>
-
+            
             <dl class="col-md-6 col-sm-6 col-xs-12" style="%%GLOBAL_HideWeight%%" id="product-attribute-weight">
                 <dt>%%LNG_Weight%%</dt>
-                <dd>%%GLOBAL_ProductWeight%%</dd>
-            </dl>
+                <dd><span class="VariationProductWeight">%%GLOBAL_ProductWeight%%</span></dd>
+            </dl>  
+
         </div>
+
+        %%Panel.ProductOtherDetails%%
         
         %%SNIPPET_ProductAddToCart%%
-        
-        <div class="row share-buttons">
 
+<div class="row"><div style="padding:20px;">
+ %%Panel.ProductDescription%%
+</div></div>
+        <!--div class="panel-group" id="product-accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#product-accordion" href="#collapseOne">
+                            The Details
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                       
+                    </div>
+                </div>
+            </div>
+<            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#product-accordion" class="collapsed" href="#collapseTwo">
+                            Specs
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        %%Panel.ProductWarranty%%
+                    </div>
+                </div>
+            </div>         </div-->
+    <a name="Reviews"></a>     %%Panel.ProductReviews%%  
+        <!--div class="row share-buttons">
+            
             <div class="col-md-12 col-sm-12 col-xs-12 text-center">
                 
                 <h2><span>Be nice and share</span></h2>
-
+                
                 <div class="social-buttons cf">
                     
                     <span class='st_facebook_large' displayText='Facebook'></span>
@@ -161,11 +200,14 @@
                     <span class='st_pinterest_large' displayText='Pinterest'></span>
                 </div>
             </div>
-        </div>
-        
-        %%SNIPPET_ProductExpectedReleaseDate%%
+        </div-->
         
     </div>
+
+    <!--div class="col-md-12">
+        
+        %%Panel.ProductReviews%%
+    </div-->
     
     %%SNIPPET_ProductAddToCartBelow%%
     
@@ -179,4 +221,28 @@
         <div class="modal-content"></div>
     </div>
 </div>
+        
+        <div itemscope itemtype="http://schema.org/Product">
+<meta itemprop="name" content="%%GLOBAL_ProductName%%">
+<meta itemprop="description" content="%%Page.MetaDescription%%">
+<meta itemprop="image" content="%%GLOBAL_ThumbImageURL%%">
+<meta itemprop="model" content="%%GLOBAL_SKU%%">
 
+<div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+<meta itemprop="worstRating" content="1">
+<meta itemprop="bestRating" content="5">
+<meta itemprop="ratingValue" content="%%GLOBAL_Rating%%">
+<meta itemprop="reviewCount" content="%%GLOBAL_ProductNumReviews%%">
+</div>
+
+<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+<meta itemprop="price" content="%%GLOBAL_ProductPrice%%">
+<meta itemprop="priceCurrency" content="USD" />
+<link itemprop="availability" href="http://schema.org/InStock" />
+</div>
+
+<div itemscope itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="%%GLOBAL_BrandName%%">
+</div>
+
+</div>

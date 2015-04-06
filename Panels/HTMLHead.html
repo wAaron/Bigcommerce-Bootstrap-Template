@@ -1,137 +1,140 @@
 <head>
 
-	<title>%%Page.WindowTitle%%</title>
+    <title>%%Page.WindowTitle%%</title>
 
     <meta charset="%%GLOBAL_CharacterSet%%">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-    <meta name='viewport' content='width=1000'>
-	<meta name="description" content="%%Page.MetaDescription%%" />
-	<meta name="keywords" content="%%Page.MetaKeywords%%" />
 
-	%%GLOBAL_AdditionalMetaTags%%
-	%%Page.CanonicalLink%%
-	%%Page.Robots%%
-	
-	<link rel="shortcut icon" href="%%GLOBAL_Favicon%%" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!-- %%GLOBAL_HeadFonts%% -->
+    <meta name="description" content="%%Page.MetaDescription%%" />
+    <meta name="keywords" content="%%Page.MetaKeywords%%" />
+    <link rel="shortcut icon" href="%%GLOBAL_Favicon%%" />
 
-	<script src="%%ASSET_js/modernizr.js%%"></script>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<link rel="stylesheet" href="%%ASSET_Styles/bootstrap/bootstrap.css%%" id="bootstrap-stylesheet" />
-	<link rel="stylesheet" href="%%ASSET_Styles/bootstrap/bootstrap-theme.css%%" id="bootstrap-theme-stylesheet" />
-	<link rel="stylesheet" href="%%ASSET_Styles/styles.css%%" />
-	<link rel="stylesheet" href="%%ASSET_Styles/theme.css%%" />
-	<link rel="stylesheet" href="%%ASSET_Styles/custom.css%%" />
-	<link rel="stylesheet" href="%%ASSET_Styles/components.css%%" />
-	<script>
+    %%GLOBAL_AdditionalMetaTags%%
+    %%Page.CanonicalLink%%
+    %%Page.Robots%%
+    
+    <!-- <link rel="shortcut icon" href="%%GLOBAL_Favicon%%" /> -->
 
-	$.holdReady(true);
+    <!-- %%GLOBAL_HeadFonts%% -->
 
-	/*  // = Deprecated  */
-	
-	var config                       = {}
-		lang                         = {},
-		QuickView                    = {},
-		config.lang                  = lang,
-		config.carousel              = {},
-		config.modal                 = {},
-		config.imagezoom             = {},
-		config.quicksearch           = {},
-		config.ShopPath              = '%%GLOBAL_ShopPath%%',
-		config.AppPath               = '', //
-		config.FastCart              = %%GLOBAL_FastCart%%,
-		config.ShowCookieWarning     = !!%%GLOBAL_ShowCookieWarningMessage%%,
-		config.ThumbnailWidth        = %%GLOBAL_ProductThumbImageWidth%%,
-		config.ThumbnailHeight       = %%GLOBAL_ProductThumbImageHeight%%,
-		config.lang.EmptySmallSearch = "%%LNG_EmptySmallSearch%%",
-		QuickView.attachFormValidator = function() {
-		
-			$('#productDetailsAddToCartForm').validate({
-				onsubmit: false,
-				ignoreTitle: true,
-				showErrors: function (errorMap, errorList) {
-					// nothing
-				},
-				invalidHandler: function (form, validator) {
+    <script src="%%ASSET_js/modernizr.js%%"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="%%ASSET_js/main.js%%"></script>
+       <script src="%%ASSET_js/maintabs.js%%"></script>
+    <script src="%%ASSET_js/cleanglobals.js%%"></script>
+    <link rel="stylesheet" href="%%ASSET_Styles/bootstrap/bootstrap.css%%" />
+    <link rel="stylesheet" href="%%ASSET_Styles/styles.css%%" />
+    <link rel="stylesheet" href="%%ASSET_Styles/navigation.css%%" />
+    <link rel="stylesheet" href="%%ASSET_Styles/theme.css%%" />
+    <link rel="stylesheet" href="%%ASSET_Styles/custom.css%%" />
+    <link rel="stylesheet" href="%%ASSET_Styles/components.css%%" />
+    <link rel="stylesheet" href="%%ASSET_Styles/home.css%%" />
+    <link rel="stylesheet" href="%%ASSET_Styles/producttabs.css%%" />
+    <script>
 
-					if(!validator.size())
-						return;
-					
-					alert(validator.errorList[0].message);
-				}
-			});
-		};
+    $.holdReady(true);
 
-	Modernizr.load({
-		load: [
-	  		'%%ASSET_Styles/responsive.css%%',
-	  		'%%ASSET_Styles/social.css%%',
-		]
-	});
+    /*  // = Deprecated  */
+    
+    var config                       = {}
+        lang                         = {},
+        QuickView                    = {},
+        config.lang                  = lang,
+        config.carousel              = {},
+        config.modal                 = {},
+        config.imagezoom             = {},
+        config.quicksearch           = {},
+        config.ShopPath              = '%%GLOBAL_ShopPath%%',
+        config.AppPath               = '', //
+        config.FastCart              = %%GLOBAL_FastCart%%,
+        config.ShowCookieWarning     = !!%%GLOBAL_ShowCookieWarningMessage%%,
+        config.ThumbnailWidth        = %%GLOBAL_ProductThumbImageWidth%%,
+        config.ThumbnailHeight       = %%GLOBAL_ProductThumbImageHeight%%,
+        config.lang.EmptySmallSearch = '%%LNG_EmptySmallSearch%%',
+        config.defaultThumbnail      = '%%ASSET_images/ProductDefault.50.50.gif%%',
+        QuickView.attachFormValidator = function() {
+        
+            $('#productDetailsAddToCartForm').validate({
+                
+                onsubmit: false,
+                ignoreTitle: true,
+                showErrors: function (errorMap, errorList) {
+                    // nothing
+                },
+                invalidHandler: function (form, validator) {
 
-	Modernizr.load({
-	  	load: [
-	  		'%%ASSET_js/jquery-migrate-1.2.1.min.js%%',
-	  		'%%ASSET_js/bootstrap.js%%',
-	  		'%%ASSET_js/jquery.imagesloaded.js%%',
-	  		'%%ASSET_js/common.js%%' ,
-	  		'%%ASSET_js/init.js%%',
-	  		'%%ASSET_js/main.js%%',
-	  		'%%ASSET_js/cleanglobals.js%%',
-	  		'%%ASSET_js/quicksearch.js%%',
-	  		'%%ASSET_js/jquery.validate.1.13.1.js%%',
-	  		'%%ASSET_js/product.functions.js%%',
-	  		'%%ASSET_js/product.attributes.js%%',
-	  		'%%ASSET_js/jquery.cookie.js%%',
-	  		'%%ASSET_js/jquery.bootstrapThemeSwitcher.js%%',
-	  		'//ws.sharethis.com/button/buttons.js',
-	  		'%%GLOBAL_CdnAppPath%%/javascript/iselector.js?%%GLOBAL_JSCacheToken%%',
-	  		'%%GLOBAL_CdnAppPath%%/javascript/viewport.js??%%GLOBAL_JSCacheToken%%'
-	  	],
-	  	complete: function(){
+                    if(!validator.size())
+                        return;
+                    
+                    alert(validator.errorList[0].message);
+                }
+            });
+        };
 
-	  		$.holdReady(false);
+    Modernizr.load({
+          load: [
+              '%%ASSET_js/jquery-migrate-1.2.1.min.js%%',
+              '%%ASSET_js/bootstrap.js%%',
+              '%%ASSET_js/jquery.imagesloaded.js%%',
+              '%%ASSET_js/common.js%%',
+              '%%ASSET_js/quicksearch.js%%',
+              '%%ASSET_js/jquery.validate.1.13.1.js%%',
+              '%%ASSET_js/jquery.cookie.js%%',
+              '//ws.sharethis.com/button/buttons.js',
+              '%%GLOBAL_CdnAppPath%%/javascript/iselector.js?%%GLOBAL_JSCacheToken%%',
+              '%%GLOBAL_CdnAppPath%%/javascript/viewport.js??%%GLOBAL_JSCacheToken%%'
+          ],
+          complete: function(){
 
-			// Sharethis Code
-		    stLight.options({
+              $.holdReady(false);
 
-		        publisher: "b93f5d16-0d14-4db5-880a-abb4267b34e7", 
-		        doNotHash: false, 
-		        doNotCopy: false, 
-		        hashAddressBar: false
-		    });
+              // SVG Fallback
+              if(!Modernizr.svg){
 
-	    	var test         = $('#crappy_code').prop('outerHTML').replace('<!--', '').replace('-->', ''), // As text, extract code from commented global
-	    		dummytag     = $('<p />').append( test ), // append it to a temporary div to convert it to HTML
-	    		crap_scripts = $(dummytag).find('script'); // Find script tags
+                $('img[src*="svg"]').attr('src', function() {
 
-		    $(crap_scripts).each( function(){	
-		    	// if no source, load it, we want to load scripts ourselves
-		    	if(!$(this).is('[src]') && !($(this).is(':contains("ShowImageZoomer")'))){
+                    return $(this).attr('src').replace('.svg', '.png');
+                });
+            }
 
-		    		Modernizr.load(this);
-		    		//$('head').append(this);
-		    	}else{
+            // Sharethis Code
+            stLight.options({
 
-		    		console.log( 'Skipped loading ' + $(this).attr('src') );
-		    	}
-		    });
+                publisher: "b93f5d16-0d14-4db5-880a-abb4267b34e7", 
+                doNotHash: false, 
+                doNotCopy: false, 
+                hashAddressBar: false
+            });
 
-		    $('#ThemeList').bootstrapThemeSwitcher();
-            $('#ThemeSelect').bootstrapThemeSwitcher({bootswatchApiUrl: '%%ASSET_js/bootstrapthemes.js%%'});
-	  	}
-	});
-	</script>
+            var test         = $('#crappy_code').prop('outerHTML').replace('<!--', '').replace('-->', ''), // As text, extract code from commented global
+                dummytag     = $('<p />').append( test ), // append it to a temporary div to convert it to HTML
+                crap_scripts = $(dummytag).find('script'); // Find script tags
 
-	%%GLOBAL_HeadRSSLinks%%
-	%%GLOBAL_TrackingCode%%
-	%%GLOBAL_DesignModeStyleSheet%%
-	%%GLOBAL_HeaderImageStyle%%
-	%%GLOBAL_RTLStyles%%
+            $(crap_scripts).each( function(){    
+                // if no source, load it, we want to load scripts ourselves
+                if(!$(this).is('[src]') && !($(this).is(':contains("ShowImageZoomer")'))){
 
-	<!-- GLOBAL STYLES -->
-	<!-- %%GLOBAL_Stylesheets%% -->
-	<!-- GLOBAL STYLES END -->
+                    Modernizr.load(this);
+                    //$('head').append(this);
+                }else{
+
+                    console.log( 'Skipped loading ' + $(this).attr('src') );
+                }
+            });
+
+          }
+    });
+    </script>
+
+    %%GLOBAL_HeadRSSLinks%%
+    %%GLOBAL_TrackingCode%%
+    %%GLOBAL_DesignModeStyleSheet%%
+    %%GLOBAL_HeaderImageStyle%%
+    %%GLOBAL_RTLStyles%%
+
+    <!-- GLOBAL STYLES -->
+    <!-- %%GLOBAL_Stylesheets%% -->
+    <!-- GLOBAL STYLES END -->
 </head>

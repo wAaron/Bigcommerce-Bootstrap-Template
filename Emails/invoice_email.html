@@ -1,44 +1,37 @@
-<html><body style="font-family:Arial; font-size:12px; margin: 0; padding: 20px;">
-	<div>
-		%%GLOBAL_NoPaymentTaken%%
-		<h2 style="font-size:22px; height:30px; color:#cc6600; border-bottom:dashed 1px gray">%%LNG_ThanksForYourOrder%%</h2>
-		<div style="width:100%; padding:10px; background-color:#FFF4EA">
-			<img src="%%GLOBAL_IMG_PATH%%/InfoMessage.gif" />&nbsp;
-			%%LNG_YourOrderIDIs%% <strong>#%%GLOBAL_OrderNumber%%</strong>. %%GLOBAL_ViewOrderStatusMsg%%
-		</div>
-		%%GLOBAL_PendingPaymentNotice%%
-		<br />
-		<table width="100%" border="0" cellspacing="0" cellpadding="0">
-			<tr>
-				<td id="Left" width="50%" valign="top">
-					<h3 style="font-family:Arial; font-size:18px">%%LNG_ShippingAddress%%</h3>
-					<div style="font-family:Arial; font-size:12px">%%GLOBAL_ShippingAddress%%</div>
-					<!--
+<div style="width: 700px;">
+<div style="border-bottom: 3px solid rgba(255, 110, 110, 0.95); margin-bottom: 5px; background: #666 url('http:////cdn3.bigcommerce.com/s-zbzzzn9/templates/__custom/images/bg-header.png?t=1426110971');">
+<div style="padding: 20px; background-color: #666666; margin-left: 40px; width: 230px; border-left: 1px solid #555555; border-right: 1px solid #555555;"><img src="http://cdn3.bigcommerce.com/s-zbzzzn9/product_images/taylor_street_favors_2015_250_100_1423523725_00043_1425516973__30035.png" alt="Taylor Street Favors" /></div>
+</div>
+<div style="padding: 5px; border: 20px solid #666666; margin-bottom: 5px;">
+<div style="padding: 10px; border: 1px solid #666666;">%%GLOBAL_NoPaymentTaken%%
+<h2 style="font-size: 22px; color: #666666; border-bottom: 1px dotted #888888;">%%LNG_ThanksForYourOrder%%</h2>
+<div style="padding: 10px; background-color: #eaeaea;"><img src="%%GLOBAL_IMG_PATH%%/InfoMessage.gif" alt="" />&nbsp; %%LNG_YourOrderIDIs%% <strong>#%%GLOBAL_OrderNumber%%</strong>. %%GLOBAL_ViewOrderStatusMsg%%</div>
+<div style="padding: 10px; border-bottom: 1px dotted #888888;">%%GLOBAL_PendingPaymentNotice%%</div>
+<div style="margin-bottom: 10px; padding: 10px; border-bottom: 1px dotted #888888;">
+<table style="width: 100%;" border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td id="Left" valign="top" width="50%">
+<h3 style="font-family: Arial; font-size: 18px;">%%LNG_ShippingAddress%%</h3>
+<div style="font-family: Arial; font-size: 12px;">%%GLOBAL_ShippingAddress%%</div>
+<!--
 					<div style="%%GLOBAL_HideShippingEmail%%">%%LNG_Email%%: %%GLOBAL_ShippingEmail%%</div>
-					-->
-				</td>
-				<td id="Right" width="50%" valign="top">
-					<h3 style="font-family:Arial; font-size:18px">%%LNG_BillingAddress%%</h3>
-					<div style="font-family:Arial; font-size:12px">%%GLOBAL_BillingAddress%%</div>
-					<!--
+					--></td>
+<td id="Right" valign="top" width="50%">
+<h3 style="font-family: Arial; font-size: 18px;">%%LNG_BillingAddress%%</h3>
+<div style="font-family: Arial; font-size: 12px;">%%GLOBAL_BillingAddress%%</div>
+<!--
 					<div style="%%GLOBAL_HideBillingEmail%%">%%LNG_Email%%: %%GLOBAL_BillingEmail%%</div>
-					-->
-				</td>
-			</tr>
-		</table>
-		<br /><br />
-		%%GLOBAL_PendingPaymentDetails%%
-
-		%%GLOBAL_OrderCommentBlock%%
-
-		<h3 style="font-size:18px">%%LNG_YourOrderContainsTheFollowingItems%%</h3>
-		%%GLOBAL_CartItemColumns%%
-
-		%%SNIPPET_CartItems%%
-		%%SNIPPET_TotalRows%%
-		%%SNIPPET_PaymentMethod%%
-
-		%%GLOBAL_EmailFooter%%
-	</div>
-</body>
-</html>
+					--></td>
+</tr>
+</tbody>
+</table>
+<div style="clear: both;">&nbsp;</div>
+</div>
+<div style="padding: 10px; background-color: #eaeaea;">%%GLOBAL_PendingPaymentDetails%% %%GLOBAL_OrderCommentBlock%%</div>
+<div style="margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px dotted #888888;">
+<h3 style="font-size: 18px; color: #666666;">%%LNG_YourOrderContainsTheFollowingItems%%</h3>
+%%GLOBAL_CartItemColumns%% %%SNIPPET_CartItems%% %%SNIPPET_TotalRows%% %%SNIPPET_PaymentMethod%%</div>
+</div>
+</div>
+%%GLOBAL_EmailFooter%%</div>

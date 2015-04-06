@@ -39,8 +39,8 @@ var Cart = {
 		$('.EstimateShipping .EstimateShippingButtons input')
 			.data('oldVal', $('.EstimateShipping .EstimateShippingButtons input').val())
 			.val(lang.Calculating)
-			.attr('disabled', true)
-		;
+			.attr('disabled', true);
+
 		$.ajax({
 			url: 'remote.php',
 			type: 'post',
@@ -53,13 +53,13 @@ var Cart = {
 			},
 			success: function(data)
 			{
+
 				$('.EstimatedShippingMethods .ShippingMethodList').html(data);
 				$('.EstimatedShippingMethods').show();
 				$('.EstimateShipping .EstimateShippingButtons span').show();
 				$('.EstimateShipping .EstimateShippingButtons input')
 					.val($('..EstimateShipping .EstimateShippingButtons input').data('oldVal'))
-					.attr('disabled', false)
-				;
+					.attr('disabled', false);
 			}
 		});
 	},
@@ -104,11 +104,17 @@ var Cart = {
 	{
 		var returnVal = true;
 		var method = $('.EstimatedShippingMethods table').each(function() {
+
 			var method = $('input[type=radio]:checked', this).val();
+
 			if(typeof(method) == 'undefined' || method == '') {
+
 				alert(lang.ChooseShippingMethod);
+
 				$('input[type=radio]:eq(0)', this).focus();
+				
 				returnVal = false;
+
 				return returnVal;
 			}
 		});
@@ -117,7 +123,7 @@ var Cart = {
 			return returnVal;
 		}
 
-		$('#cartForm').submit();
+		$('#form-cart').submit();
 	},
 
 	RemoveItem: function(itemId)
@@ -129,7 +135,7 @@ var Cart = {
 
 	UpdateQuantity: function()
 	{
-		$('#cartForm').submit();
+		$('#form-cart').submit();
 	},
 
 	ValidateQuantityForm: function(form)
@@ -225,8 +231,8 @@ var Cart = {
 		}
 	},
 
-	ShowEditOptionsInCartForm: function(itemId){
-
+	ShowEditOptionsInCartForm: function(itemId)
+	{
         $("#general-modal").modal({
         	
             remote: config.ShopPath + '/remote.php?w=editconfigurablefieldsincart&itemid='+itemId

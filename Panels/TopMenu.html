@@ -1,15 +1,9 @@
-		<nav id="navigation-top" role="navigation">
-			<ul class="list-inline">
-				<li><a href="%%GLOBAL_ShopPath%%/account.php">My Account</a></li>
-				<li><a href="%%GLOBAL_ShopPath%%/giftcertificates.php">Gift Certificates</a></li>
-				<li><a href="%%GLOBAL_ShopPath%%/wishlist.php">Wish Lists</a></li>
-				<li><a href="%%GLOBAL_ShopPath%%/login.php">Sign In</a></li>
-				<li>or</li>
-				<li><a href="%%GLOBAL_ShopPath%%/login.php?action=create_account">Create an Account</a></li>
-				<li>
-					<a href="%%GLOBAL_ShopPath%%/cart.php">
-						<i class="glyphicon glyphicon-shopping-cart" data-cart-items="%%GLOBAL_CartItems%%"></i>
-					</a>
-				</li>
+		<nav id="top-menu" role="navigation">
+			<ul class="list-inline" style="display:%%GLOBAL_HideAccountOptions%%">
+				<li>Signed in as <a href="%%GLOBAL_ShopPath%%/account.php">%%GLOBAL_CurrentCustomerFirstName%% %%GLOBAL_CurrentCustomerLastName%%</a></li>
+				<li>%%GLOBAL_LoginOrLogoutText%%</li>
+				<li><a href="%%GLOBAL_ShopPath%%/account.php">Your Account</a></li>
+				<li class="link-cart"><a href="%%GLOBAL_ShopPath%%/cart.php"><i class="icon-cart"></i>Your Bag <span class="n-cart-items">%%GLOBAL_CartItems%%</span></a></li>
+				<li><a href="%%GLOBAL_ShopPath%%/contact-us">Contact Us</a></li>
 			</ul>
 		</nav>

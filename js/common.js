@@ -574,16 +574,12 @@ function isc_TrackSearchClick (searchId) {
 
 function hideLoadingIndicator(){
 
-	$('#loading').css({top:'-400px'});
-
-	//$('body').addClass('loaded');
+	$('#loading').css({height:0});
 }
 
 function showLoadingIndicator(){
 
-	$('#loading').css({top: '0px'});
-
-	//$('body').removeClass('loaded');
+	$('#loading').css({height:'auto'});
 }
 
 /**
@@ -892,7 +888,7 @@ function updateSocialSharingPanel(productId) {
 	
 	updateSharingDataChoices(productId);
 	
-	$.iModal.close();
+	// $.iModal.close();
 }
 
 function updateSharingDataChoices(productId) {
@@ -962,137 +958,8 @@ function triggerStorefrontEvent(name, data, complete) {
 	});
 }
 
-$.fn.hideIfEmpty = function(){
-	
-	if(!$(this).text().trim().length)
-	$(this).hide();
-	
-	return this;
-}
-
-$.fn.hideIfChildrenInvisible = function(){
-	
-	if(!$('> *:visible', this).length)
-	$(this).hide();
-	
-	return this;
-}
-
-$.fn.highlightActiveLinks = function(){
-	
-	$(this).each( function(){
-		
-		var relativeLink = $('a', this).attr('href').replace(window.location.protocol + '//' + window.location.host, '');
-		
-		if(relativeLink == window.location.pathname)
-		$(this).addClass('active');
-		
-	});
-	
-	return this;
-}
-
-$.fn.formatRating = function(){
-	
-	$(this).each( function(){
-		
-		
-		
-		if(!!$(this).attr('data-rating')){
-			
-			var nRating = $(this).attr('data-rating');
-		}else
-		if($('img', this).length){
-			
-			var nRating = $(this).find('img').attr('src').match(/Rating(\d+)/)[1];
-			
-			$('img', this).remove();
-			}else{
-			
-			var nRating = this.className.match(/Rating(\d+)/)[1];
-		}
-		
-		for( var i = 0; i < 5; i++ ){
-			
-			var classDisabled = (i >= nRating)?'glyphicon-disabled ':'';
-			
-			$(this).append( $('<i class="' + classDisabled + 'glyphicon glyphicon-star"></i>') );
-		}
-	});
-	
-	return this;
-}
-
-$.fn.formatProductColorSwatches = function(){
-
-	$(this).each( function(){
-
-		$('ul', this).attr({
-			'data-toggle': 'buttons',
-			'class': 'btn-group'
-		});
-
-		$('ul > li', this).each( function(){
-
-			var bgColor = $('.swatchColour', this).css('backgroundColor');
-
-			$('.swatchColour', this).remove();
-
-			$(this).addClass('btn').css('backgroundColor', bgColor);
-
-			$('input', this).attr('autocomplete', 'off');
-
-			$(this).append( $('<span />').addClass('glyphicon glyphicon-ok') );
-
-			// var channels = bgColor.match(/\d+/g), 
-			//     inverted_channels = channels.map(function(ch) {
-			//         return 255 - ch;
-			//     }), 
-			//     inverted = 'rgb(' + inverted_channels.join(', ') + ')';
-
-
-			$('.glyphicon', this).css('color', '#fff');
-
-		});
-
-		$('ul > li input:checked', this).parents('li').trigger('click');
-	});
-}
-
-$.fn.formatProductOptions = function(){
-
-	$(this).each( function(){
-
-		$('ul', this).attr({
-			'data-toggle': 'buttons',
-			'class': 'btn-group'
-		});
-
-		$('ul > li', this).each( function(){
-
-			$(this).addClass('btn btn-info').append( $('<span />').addClass('glyphicon glyphicon-ok') );
-		});
-
-		$('ul > li input:checked', this).parents('li').trigger('click');
-	});
-}
-
-
-$.fn.chunkList = function(){
-	
-	var per_slide = 4;
-	
-	for(var i = 0; i < this.length; i += per_slide){
-		
-		var current = (i == per_slide)?' active':'';
-		
-		this.slice(i, (i + per_slide)).wrapAll('<li class="item' + current + '"><ul class="ProductList"></ul></li>');
+(function($) {
+	if ('undefined' !== typeof $) {
+		$.ajaxSetup({ cache: true });
 	}
-	
-	return this;
-}
-
-$.fn.draggable = function(){
-
-	return this;
-}
+})($);

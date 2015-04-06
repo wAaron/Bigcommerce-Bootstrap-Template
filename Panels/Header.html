@@ -22,34 +22,35 @@
 %%GLOBAL_MaintenanceNotice%%
 
 <header id="header">
-	<div class="container">
-		<div class="row" id="header-top">
-			<div class="col-md-5">
-
-				<button type="button" class="navbar-toggle navbar-toggle-search collapsed" data-toggle="collapse" data-target="#collapse-search" aria-expanded="false">
-					<span class="sr-only">Toggle Search</span>
-					<i class="glyphicon glyphicon-search"></i>
-				</button>
-
-				<a href="%%GLOBAL_ShopPathNormal%%" class="logo">
-					<img src="%%GLOBAL_CdnStorePath%%/%%GLOBAL_ImageDirectory%%/%%GLOBAL_StoreLogo%%" alt="%%GLOBAL_StoreName%%" />
-				</a>
-			</div>
-
-			<div class="col-md-7 text-right">
-
-				<div id="navigation-top-container">
+	<div class="header-top">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-right">
 					%%Panel.TopMenu%%
 				</div>
-
-				%%Panel.HeaderSearch%%
 			</div>
 		</div>
-		<nav class="nav navbar-inverse" role="navigation">
+	</div>
+	<div class="header-middle">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5 col-sm-6 col-xs-12 logo">
+					%%GLOBAL_HeaderLogo%%
+				</div>
+				<div class="col-md-7 text-right">
+					%%Panel.HeaderSearch%%
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<nav role="navigation">
 			
-			%%Panel.PagesMenu%%
+			%%Panel.SideCategoryList%%
+
+			<ul class="nav navbar-nav" id="secondary-menu">
+				<li><a href="/blog/">Blog</a></li>
+			</ul>
 		</nav>
 	</div>
-
 </header>
-

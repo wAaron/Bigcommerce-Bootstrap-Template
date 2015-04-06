@@ -26,23 +26,24 @@
 		<div class="container">
 			<div class="row">
 
-				<header class="col-md-12">
 
-					<h1 class="page-header">%%GLOBAL_CatName%%</h1>
-				</header>
 				<aside class="col-md-3">
 
-					<summary>%%GLOBAL_CatDesc%%</summary>
-
 					%%Panel.SideCategoryList%%
-				</aside>    
+				</aside>
 				<div class="col-md-9 %%GLOBAL_ExtraCategoryClass%%">
-					
-					<div class="row">
-						
-						%%Panel.CategoryPagingTop%%
 
-						%%SNIPPET_CategorySortBox%%
+					<header>
+
+						<h1 class="page-header">%%GLOBAL_CatName%%</h1>
+
+						<summary>%%GLOBAL_CatDesc%%</summary>
+					</header>					
+					
+
+					<div class="row" id="search-toolbar-top">
+						
+						%%Panel.CategoryHeading%%
 					</div>
 
 					%%Panel.CategoryContent%%

@@ -1,10 +1,12 @@
-	<form name="product-form-wishlist" id="form-wishlist" class="text-center" style="display:%%GLOBAL_HideWishlist%%" action="%%GLOBAL_ShopPath%%/wishlist.php" method="get">
+<div id="SideProductAddToWishList" style="display:%%GLOBAL_HideWishlist%%">
+	
+	<form name="form-wishlist" id="form-wishlist" action="%%GLOBAL_ShopPath%%/wishlist.php" method="get">
 
 		<input type="hidden" name="action" value="add">
 		<input type="hidden" name="product_id" value="%%GLOBAL_ProductId%%">
 		<input type="hidden" name="variation_id" value="" class="WishListVariationId">
-
-		<!-- <p>%%LNG_AddToCart1%% %%GLOBAL_ProductName%% %%LNG_ToYourWishList%%</p>
+<!-- 
+		<p>%%LNG_AddToCart1%% %%GLOBAL_ProductName%% %%LNG_ToYourWishList%%</p>
 		<p>%%GLOBAL_WishLists%%</p> -->
 
         <button class="btn btn-link btn-sm btn-wishlist">
@@ -12,3 +14,5 @@
 			%%LNG_AddToWishList%%
         </button>
 	</form>
+</div>
+

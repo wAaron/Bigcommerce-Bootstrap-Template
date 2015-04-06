@@ -8,7 +8,7 @@
 		<p class="alert alert-danger" style="display: %%GLOBAL_HideErrorMessage%%">%%GLOBAL_WishListMessage%%</p>
 		<p class="alert alert-success" style="display: %%GLOBAL_HideSuccessMessage%%">%%GLOBAL_WishListMessage%%</p>
 
-		<table cellspacing="0" cellpadding="0" class="cart-contents" style="%%GLOBAL_HideWishListsTable%%" class="table table-bordered table-responsive">
+		<table cellspacing="0" cellpadding="0" style="%%GLOBAL_HideWishListsTable%%" class="table table-bordered table-responsive">
 			<thead>
 				<tr>
 					<th width="10"><input type="checkbox" id="selectAllWishLists" onclick="ToggleWishListDeleteBoxes(this.checked)"></th>
@@ -23,8 +23,15 @@
 
         <div class="actions">
 
-            <input type="button" onclick="document.location.href='wishlist.php?action=addwishlist'" value="Create Wishlist" class="btn btn-primary">
-            <input type="submit" value="Delete Selected" class="btn btn-danger" style="%%GLOBAL_HideWishListsTable%%">
+            <button class="btn btn-primary" onclick="document.location.href='wishlist.php?action=addwishlist'">
+            	<i class="glyphicon glyphicon-plus-sign"></i>
+            	Create Wishlist
+            </button>
+
+            <button class="btn btn-danger" style="%%GLOBAL_HideWishListsTable%%">
+            	<i class="glyphicon glyphicon-remove"></i>
+            	Delete Selected
+            </button>
     	</div>
 	</form>
 

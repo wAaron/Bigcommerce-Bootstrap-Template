@@ -11,17 +11,20 @@
 	<td class="wishTableShared">
 		%%GLOBAL_WishListShared%%
 	</td>
-	<td class="action">
-		<div class="edit">
-			<a class="btn btn-primary" href="wishlist.php?action=editwishlist&amp;wishlistid=%%GLOBAL_WishListID%%">
-				%%LNG_Edit%%
-			</a>
+	<td class="action text-center">
+
+		<a class="btn btn-primary" href="wishlist.php?action=editwishlist&amp;wishlistid=%%GLOBAL_WishListID%%">
+			<i class="glyphicon glyphicon-cog"></i>
+			%%LNG_Edit%%
+		</a>
+		<a class="btn btn-danger" href="#" onclick="ValidateDeleteWishlist(false, %%GLOBAL_WishListID%%); return false;">
+			<i class="glyphicon glyphicon-remove"></i>
+			%%LNG_Delete%%
+		</a>
+
+		<div class="share btn btn-link btn-block text-center">
+			<i class="glyphicon glyphicon-share-alt"></i>
+			%%GLOBAL_ShareWishListLink%%
 		</div>
-		<div class="delete">
-			<a class="btn btn-default" href="#" onclick="ValidateDeleteWishlist(false, %%GLOBAL_WishListID%%); return false;">
-				%%LNG_Delete%%
-			</a>
-		</div>
-		<div class="share">%%GLOBAL_ShareWishListLink%%</div>
 	</td>
 </tr>

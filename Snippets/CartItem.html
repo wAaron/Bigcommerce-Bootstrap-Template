@@ -26,10 +26,12 @@
 				<span style="%%GLOBAL_HideGiftWrappingEdit%%">
 
 					<a href="#" class="btn btn-default" onclick="Cart.ManageGiftWrapping('%%GLOBAL_CartItemId%%');">
+						<i class="glyphicon glyphicon-cog"></i>
 						%%LNG_Change%%
 					</a> 
 					<span class="or">%%LNG_Or%%</span>
 					<a class="btn btn-danger" href="cart.php?action=remove_giftwrapping&amp;item_id=%%GLOBAL_CartItemId%%" onclick="return Cart.RemoveGiftWrapping();">
+						<i class="glyphicon glyphicon-remove"></i>
 						%%LNG_Remove%%
 					</a>
 				</span>
@@ -53,9 +55,9 @@
 
 			<strong class="btn product-price">%%GLOBAL_ProductTotal%%</strong>
 
-			<a href="cart.php?action=remove&amp;item=%%GLOBAL_CartItemId%%" onclick="Cart.RemoveItem('%%GLOBAL_CartItemId%%'); return false;" class="btn btn-danger pull-right CartRemoveLink" style="%%GLOBAL_HideCartItemRemove%%">
+			<a href="cart.php?action=remove&amp;item=%%GLOBAL_CartItemId%%" onclick="Cart.RemoveItem('%%GLOBAL_CartItemId%%'); return false;" class="btn btn-xs btn-danger CartRemoveLink" style="%%GLOBAL_HideCartItemRemove%%">
 				<i class="glyphicon glyphicon-remove"></i>
-				Remove
+				<span class="sr-only">%%LNG_Remove%%</span>
 			</a>
 		</td>
 	</tr>

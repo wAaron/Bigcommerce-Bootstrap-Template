@@ -142,11 +142,11 @@ function BigCommerceProductCarousel(){
 
 	$('body').on('hidden.bs.modal', '#product-image-modal', function (e) { 
 
-		$(config.carousel.product.selector).carousel('cycle');
+		$(config.carousel.product.selector).carousel('cycle').carousel('next');
 
         $(config.carousel.product.thumbnail_selector + config.carousel.product.index).elevateZoom(
 
-            config.imagezoom.elevate_zoom
+            config.imagezoom.elevate_zoom   
         );
 
 		$(this).removeData('bs.modal'); 

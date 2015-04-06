@@ -358,14 +358,15 @@ var ExpressCheckout = {
 
 	HideLoadingIndicators: function()
 	{
-		//HideLoadingIndicator();
+		$('#loading').css({height:0});
+
 		$('.ExpressCheckoutBlock input[type=submit]').each(function() {
 			if($(this).attr('oldValue') && $(this).attr('disabled') == true) {
 				$(this).val($(this).attr('oldValue'));
 				$(this).attr('disabled', false);
 			}
 		});
-		$('.LoadingIndicator').hide();
+
 		$('body').css('cursor', 'default');
 	},
 

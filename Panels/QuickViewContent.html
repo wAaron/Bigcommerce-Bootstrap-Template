@@ -2,25 +2,31 @@
 	QuickView.attachFormValidator();
 </script>
 <style>
-.row-modal{
 
-	clear: both;
-}
+.productAttributeConfigurablePickListSet, 
+.productAttributeConfigurablePickListSwatch{
 
-.modal-footer{
-
-	text-align: center;
-}
-
-.productAttributeConfigurablePickListSet, .productAttributeConfigurablePickListSwatch{
-
-	border-bottom: 1px solid #f3f3f3;
 	margin-bottom: 1em;
 }
 
 #add-to-cart-box .productAttributeRow{
 
 	margin-bottom: 0;
+}
+
+.productAttributeRow .productAttributeLabel{
+
+	font-weight: bold;
+}
+
+.te .lead{
+
+	margin-bottom: 0;
+}
+
+.thumbnail{
+
+	border-width: 0;
 }
 </style>
 <div id="site-modal">
@@ -47,9 +53,17 @@
 		            </a>
 		        </div>
 
-				<p class="lead">%%GLOBAL_QuickViewProductDescription%%</p>	
+				<p class="lead">
 
-				<div class="row-modal well cf">
+					%%GLOBAL_QuickViewProductDescription%%
+
+					<a href="%%GLOBAL_QuickViewProductURL%%" class="btn btn-info btn-xs">
+						View Details
+						<i class="glyphicon glyphicon-arrow-right"></i>
+					</a>
+				</p>
+
+				<div class="row-modal well clearfix" style="display: none;">
 
 					<dl class="col-md-6 col-sm-6 col-xs-12 productAttributeRow ProductSKU" style="display: %%GLOBAL_HideSKU%%">
 						<dt class="productAttributeLabel">%%LNG_SKU%%</dt>
@@ -121,26 +135,26 @@
 						</dd>
 					</dl>
 				</div>
-
-
 				
 	        </div><!-- END te -->
 	    </div>
 	    <div class="modal-footer cf">
 
-			<div class="row-modal">
+			<div class="row-modal clearfix">
 				%%SNIPPET_ProductFieldsList%%
 			</div>
 			
-			<div class="row-modal" style="%%GLOBAL_HideProductAttributeList%%">
-				%%GLOBAL_ProductAttributeList%%
+			<div class="row-modal clearfix" style="%%GLOBAL_HideProductAttributeList%%">
+				<div class="productAttributeList">
+					%%GLOBAL_ProductAttributeList%%
+				</div>
 			</div>
 			
 			<div class="row-modal">
 				%%SNIPPET_EventDate%%
 			</div>
 
-			<div class="row-modal" id="add-to-cart-box">
+			<div class="row-modal clearfix">
 
 				<dl class="col-md-4 col-sm-4 col-xs-12 productAttributeRow" style="display: %%GLOBAL_HideShipping%%">
 					<dt class="productAttributeLabel">%%LNG_Shipping%%</dt>
@@ -149,7 +163,16 @@
 					</dd>
 				</dl>
 
-                <div class="col-md-4 col-sm-4 col-xs-12 ProductPriceWrap">
+				<div class="col-md-12 col-sm-12 col-xs-12 productAttributeRow" style="%%GLOBAL_ItemSoldOut%%">
+					<div class="productAttributeValue OutOfStockMessage">
+						%%SNIPPET_SideAddItemSoldOut%%
+					</div>
+				</div>
+			</div>
+
+			<div class="row-modal clearfix" id="add-to-cart-box">
+
+                <div class="col-md-4 col-sm-12 col-xs-12 ProductPriceWrap text-center">
 
                     <div class="productAttributeRow RetailPrice" style="display: %%GLOBAL_HideRRP%%">
                         <span class="productAttributeLabel">%%LNG_RRP%%:</span>
@@ -159,59 +182,46 @@
 
                     <div class="productAttributeRow PriceRow" style="%%GLOBAL_HidePrice%%">
                         <!-- <div class="productAttributeLabel">%%GLOBAL_PriceLabel%%</div> -->
-                        <div class="productAttributeValue">
-                            <strong class="lead btn product-price">%%GLOBAL_ProductPrice%%</strong>
+                        <div class="productAttributeValue product-price-container">
+                            <strong class="lead product-price">%%GLOBAL_ProductPrice%%</strong>
                             %%GLOBAL_IncludingExcludingTax%%
                         </div>
                     </div>
+
+                    <div class="bulk-discount" style="display: %%GLOBAL_HideBulkDiscountLink%%;">
+                       <a href="#bulk-discount-rates-modal" data-toggle="collapse" class="btn-buy-bulk">&raquo; Buy More and Save</a>
+                    </div>
                 </div>
 
-				<div class="col-md-4 col-sm-4 col-xs-12 productAttributeRow" style="display: %%GLOBAL_DisplayAdd%%">
-
-		            <div class="input-group" style="display: %%GLOBAL_DisplayAddQty%%">
-		                
+				<div class="col-md-4 col-sm-12 col-xs-12">
+					<div class="input-group" style="display: %%GLOBAL_DisplayAddQty%%">
 		                <label class="input-group-addon">%%LNG_QuantityFull%%</label>
 		                %%GLOBAL_AddToCartQty%%
 		            </div>
-				</div>
-				
-				<div class="col-md-6 col-sm-6 col-xs-12 productAttributeRow" style="display: %%GLOBAL_HideBulkDiscountLink%%;">
-					<div class="productAttributeLabel">%%LNG_QuickViewBulkDiscountsLabel%% </div>
-					<div class="productAttributeValue">
-						<ul>%%GLOBAL_BulkDiscountThickBoxRates%%</ul>
-					</div>
-				</div>
+		        </div>
 
-				<div class="col-md-6 col-sm-6 col-xs-12 productAttributeRow" style="%%GLOBAL_ItemSoldOut%%">
-					<div class="productAttributeValue OutOfStockMessage">
-						%%SNIPPET_SideAddItemSoldOut%%
-					</div>
-				</div>
-			</div>
-
-			<div class="row-modal">
-				<div class="col-md-4 col-sm-4 col-xs-12">
-					<a href="#" class="btn btn-default btn-block add-to-wishlist" style="display:%%GLOBAL_HideWishlist%%">
-						<i class="glyphicon glyphicon-star"></i>
-						Add to Wishlist
-					</a>
-				</div>
-
-		    	<div class="col-md-4 col-sm-4 col-xs-12">
-					<button class="btn btn-primary btn-block" style="display: %%GLOBAL_DisplayAdd%%;">
+		    	<div class="col-md-4 col-sm-12 col-xs-12">
+					<button class="btn btn-primary btn-lg btn-block btn-add-to-cart" style="display: %%GLOBAL_DisplayAdd%%;">
 						<i class="glyphicon glyphicon-shopping-cart"></i>
 						Add to Cart
 					</button>
 				</div>
 
-				<div class="col-md-4 col-sm-4 col-xs-12 pull-right">
-					<a href="%%GLOBAL_QuickViewProductURL%%" class="btn btn-default btn-block">
-						View Details
-						<i class="glyphicon glyphicon-arrow-right"></i>
-					</a>
+				<div class="col-md-12 collapse bulk-discount-rates" id="bulk-discount-rates-modal">
+
+					<div class="well text-center">
+						<ul>
+							%%GLOBAL_BulkDiscountThickBoxRates%%
+						</ul>
+					</div>
 				</div>
 			</div>
+
+		    <div class="row-modal">
+
+		    </div>
 	    </div>
+
     </form>
 </div>
 

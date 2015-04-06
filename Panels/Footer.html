@@ -1,71 +1,91 @@
-
-
 <footer id="footer" role="contentinfo">
-    <div class="container">
-
-        %%Panel.SideNewsletterBox%%
-
-        <div class="row">
-
-            <div class="col-md-3">
-
-                <h4>Quick Links</h4>
-
-                <ul>
-                    <li><a href="/shipping-and-returns/">Shipping &amp; Returns</a></li>
-                    <li><a href="/privacy-policy/">Privacy Policy</a></li>
-                    <li><a href="/about-us/">About Us</a></li>
-                    <li><a href="/contact-us/">Contact Us</a></li>
-                    <li><a href="/faq/">FAQ</a></li>
-                    <li><a href="/blog/">Blog</a></li>
-                </ul>
-            </div>
-
-            <div class="col-md-3">
-
-                <h4>Account Menu</h4>
-
-                <ul>
-                    <li><a href="/account.php">My Account</a></li>
-                    <li><a href="/wishlist.php">Wishlist</a></li>
-                    <li><a href="/giftcertificates.php">Gift Certificates</a></li>
-                    <li><a href="/orderstatus.php">Order Status</a></li>
-                    <li><a href="/login.php">Log In</a> or</li>
-                    <li><a href="/login.php?action=create_account">Create an Account</a></li>
-                </ul>
-            </div>
-
-            <div class="col-md-3">
-
-                <h4>Categories</h4>
-                
-                %%Panel.FooterCategoryList%%
-            </div>
-
-            <div class="col-md-3">
-
-                <h4>Keep In Touch</h4>
-
-                %%Panel.SocialLinks%%
-                
-                <!--<script src="//smarticon.geotrust.com/si.js"></script>-->
-
-                <i class="sprite badge-authorizenet"></i>
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    %%Panel.SocialLinks%%
+                </div>
             </div>
         </div>
-        <div id="footer-bottom">
-            <div class="col-md-7 col-xs-12">
-                
-                <p id="copyright">
-                    &copy; Copyright %%GLOBAL_Year%% &mdash; %%GLOBAL_StoreName%% &mdash; 
-                    All Rights Reserved &mdash; 
-                    %%SNIPPET_SitemapLink%% | 
-                    Design by <a href="http://www.redheadlabs.com/" class="link-redhead">Redhead Labs</a>
-                </p>
-            </div>
-            <div class="col-md-5 col-xs-12 text-right">
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <nav class="col-md-3 account-menu">
 
-                <i class="sprite icon-payments"></i>
+                <h4>About Us</h4>
+
+                <ul>
+                    <li><a href="/about/">About Taylor Street Favors</a></li>
+                    <li>
+                        <a href="/contact-us/">Contact Us</a>
+                        <a href="/newsletter/">Newsletter</a>
+                    </li>
+                    <li>
+                        <a href="/login.php?action=create_account">Register</a>
+                        <a href="/orderstatus.php">Your Order Status</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <nav class="col-md-3 popular-categories-menu">
+
+                <h4>Company Info</h4>
+
+                <ul>
+                    <li>Toll Free: 844-328-6763</li>
+                    <li>Templeton, CA 93465</li>
+                    <li>Hours: M-F 9:00am to 5:00pm PT</li>
+                </ul>
+            </nav>
+
+            <nav class="col-md-3 resources-menu">
+
+                <h4>Helpful Links</h4>
+
+                <ul>
+                    <li>
+                        <a href="/faqs/">FAQs</a>
+                        <a href="/monogram-rules/">Monogram Rules</a>
+                    </li>
+                    <li><a href="/shipping-policy/">Shipping Policy</a></li>
+                    <li>
+                        <a href="/privacy-policy/">Privacy Policy</a>
+                        <a href="/terms-of-use/">Terms of Use</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <section class="col-md-3 text-right promo">
+
+                <i class="footer-promo"></i>
+            </section>
+
+            <hr />
+
+            <div class="col-md-6">
+
+                <ul id="copyright">
+                    <li><i>&copy;</i> <span>%%GLOBAL_Year%%</span> Taylor Street Favors</li>
+                    <li><i>&reg;</i> All Rights Reserved</li> 
+                </ul>
+            </div>
+            <div class="col-md-6 text-right">
+
+                <script>
+                    SiteSeal("https://seal.networksolutions.com/images/basicrecgreen.gif", "NETSB", "none");
+
+                    function SiteSeal(img,type){
+                    if(window.location.protocol.toLowerCase()=="https:"){var mode="https:";} else {var mode="http:";}
+                    var host=location.host;
+                    var baseURL=mode+"//seals.networksolutions.com/siteseal_seek/siteseal?v_shortname="+type+"&v_querytype=W&v_search="+host+"&x=5&y=5";
+                    document.write('<a href="#" onClick=\'window.open("'+baseURL+'","'+type+'","width=450,height=500,toolbar=no,location=no,directories=no,\
+                    status=no,menubar=no,scrollbars=no,copyhistory=no,resizable=no");return false;\'>\
+                    <img src="'+img+'" style="border:none;" oncontextmenu="alert(\'This SiteSeal is protected\');return false;"></a>');}
+                </script>
+
+<!--                 <a href="#" onclick="window.open(&quot;http://seals.networksolutions.com/siteseal_seek/siteseal?v_shortname=NETSB&amp;v_querytype=W&amp;v_search=taylorstreetfavors.com&amp;x=5&amp;y=5&quot;,&quot;NETSB&quot;,&quot;width=450,height=500,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,copyhistory=no,resizable=no&quot;);return false;">
+                    <img src="https://seal.networksolutions.com/images/basicrecgreen.gif" style="border:none;" oncontextmenu="alert('This SiteSeal is protected');return false;">
+                </a> -->
             </div>
         </div>
     </div>
